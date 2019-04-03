@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication6
 {
-    public partial class Form4 : Form
+    public partial class RoomInfo : Form
     {
-        public Form4()
+        public RoomInfo()
         {
             InitializeComponent();
         }

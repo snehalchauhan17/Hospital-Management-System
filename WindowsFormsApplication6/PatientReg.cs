@@ -30,29 +30,36 @@ namespace WindowsFormsApplication6
 
         private void btnsubmit_Click(object sender, EventArgs e)
         {
-            PatientInformation p = new PatientInformation();
-            p.no =Convert.ToInt32(textBox1.Text);
-            p.date = textBox2.Text;
-            p.pid = Convert.ToInt32(txtpid.Text);
-            p.name = txtname.Text;
+            PatientInformation patient = new PatientInformation();
+            patient.no =Convert.ToInt32(textBox1.Text);
+            patient.date = textBox2.Text;
+            patient.pid = Convert.ToInt32(txtpid.Text);
+            patient.name = txtname.Text;
             if(rbnmale.Checked)
-                p.gender = rbnmale.Text;
+                patient.gender = rbnmale.Text;
             else
-                p.gender = rbnfemale.Text;
-            p.age = Convert.ToInt32(txtage.Text);
-            p.address = rtaddress.Text;
-            p.disease = txtdisease.Text;
-           Database.patientList[Database.index] = p;
-            Database.index++;
+                patient.gender = rbnfemale.Text;
+            patient.age = Convert.ToInt32(txtage.Text);
+            patient.address = rtaddress.Text;
+            patient.disease = txtdisease.Text;
+
+            // insert patient to database patient info table. 
+
+
             MessageBox.Show("Patient Resistered successfully");
             
         }
 
         private void btnback_Click(object sender, EventArgs e)
         {
-            Form2 f = new Form2();
+            MainMenu f = new MainMenu();
             f.Show();
             this.Hide();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
 
        

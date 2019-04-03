@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication6
 {
-    partial class Form4
+    partial class RoomInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbnmale = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbnmale = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -58,16 +58,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Room type";
             // 
-            // rbnmale
+            // radioButton2
             // 
-            this.rbnmale.AutoSize = true;
-            this.rbnmale.Location = new System.Drawing.Point(24, 30);
-            this.rbnmale.Name = "rbnmale";
-            this.rbnmale.Size = new System.Drawing.Size(58, 17);
-            this.rbnmale.TabIndex = 13;
-            this.rbnmale.TabStop = true;
-            this.rbnmale.Text = "Normal";
-            this.rbnmale.UseVisualStyleBackColor = true;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(24, 53);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(62, 17);
+            this.radioButton2.TabIndex = 15;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Medium";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
             // 
@@ -80,16 +80,16 @@
             this.radioButton1.Text = "VIP";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbnmale
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(24, 53);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(62, 17);
-            this.radioButton2.TabIndex = 15;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Medium";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbnmale.AutoSize = true;
+            this.rbnmale.Location = new System.Drawing.Point(24, 30);
+            this.rbnmale.Name = "rbnmale";
+            this.rbnmale.Size = new System.Drawing.Size(58, 17);
+            this.rbnmale.TabIndex = 13;
+            this.rbnmale.TabStop = true;
+            this.rbnmale.Text = "Normal";
+            this.rbnmale.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -154,19 +154,12 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Room Info";
             // 
-            // textBox1
+            // textBox4
             // 
-            this.textBox1.Location = new System.Drawing.Point(148, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(135, 20);
-            this.textBox1.TabIndex = 23;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(148, 55);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(135, 20);
-            this.textBox2.TabIndex = 24;
+            this.textBox4.Location = new System.Drawing.Point(148, 107);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(135, 20);
+            this.textBox4.TabIndex = 26;
             // 
             // textBox3
             // 
@@ -175,14 +168,21 @@
             this.textBox3.Size = new System.Drawing.Size(135, 20);
             this.textBox3.TabIndex = 25;
             // 
-            // textBox4
+            // textBox2
             // 
-            this.textBox4.Location = new System.Drawing.Point(148, 107);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(135, 20);
-            this.textBox4.TabIndex = 26;
+            this.textBox2.Location = new System.Drawing.Point(148, 55);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(135, 20);
+            this.textBox2.TabIndex = 24;
             // 
-            // Form4
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(148, 31);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(135, 20);
+            this.textBox1.TabIndex = 23;
+            // 
+            // RoomInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -190,8 +190,8 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form4";
-            this.Text = "Form4";
+            this.Name = "RoomInfo";
+            this.Text = "RoomInfo";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

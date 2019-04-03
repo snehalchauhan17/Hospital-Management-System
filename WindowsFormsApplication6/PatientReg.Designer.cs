@@ -240,9 +240,10 @@
             this.label2.Font = new System.Drawing.Font("Lucida Fax", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(280, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(263, 27);
+            this.label2.Size = new System.Drawing.Size(265, 27);
             this.label2.TabIndex = 17;
-            this.label2.Text = "Patient Resistration";
+            this.label2.Text = "Patient Registration";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnsubmit
             // 
@@ -275,7 +276,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form3";
-            this.Text = "Form3";
+            this.Text = "PatientReg";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

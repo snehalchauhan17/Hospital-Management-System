@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication6
 {
-    partial class Form2
+    partial class MainMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -121,7 +121,7 @@
             this.button1.Text = "Room Information";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // Form2
+            // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -134,8 +134,8 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnpatientresistration);
-            this.Name = "Form2";
-            this.Text = "Form2";
+            this.Name = "MainMenu";
+            this.Text = "MainMenu";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

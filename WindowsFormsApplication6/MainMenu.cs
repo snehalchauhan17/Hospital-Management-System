@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication6
 {
-    public partial class Form2 : Form
+    public partial class MainMenu : Form
     {
 
-        public Form2()
+        public MainMenu()
         {
             InitializeComponent();
         }
@@ -42,7 +42,8 @@ namespace WindowsFormsApplication6
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Patient_info_list p = new Patient_info_list();
+            //Patient_info_list p = new Patient_info_list();
+            PatientGrid p = new PatientGrid();
             p.Show();
             this.Hide();
         }
