@@ -116,7 +116,7 @@
             this.ClientSize = new System.Drawing.Size(962, 408);
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Patient_info_list";
+            // this.Name = "Patient_info_list";
             this.Text = "Patient_info_list";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
