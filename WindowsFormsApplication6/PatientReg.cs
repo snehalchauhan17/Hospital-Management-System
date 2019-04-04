@@ -64,6 +64,12 @@ namespace WindowsFormsApplication6
 
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PatientInformation pi = DatabaseHelper.getPatient(Convert.ToInt32(txtpid.Text));
+            textBox2.Text = pi.date;
+        }
+
        
     }
 }

@@ -22,3 +22,4 @@ C:\Users\Vipul-Home\Documents\Visual Studio 2013\Projects\Hospital Management Sy
 C:\Users\Vipul-Home\Documents\Visual Studio 2013\Projects\Hospital Management System\Hospital-Management-System\WindowsFormsApplication6\obj\Debug\HospitalManagementSystem.csproj.GenerateResource.Cache
 C:\Users\Vipul-Home\Documents\Visual Studio 2013\Projects\Hospital Management System\Hospital-Management-System\WindowsFormsApplication6\obj\Debug\WindowsFormsApplication6.exe
 C:\Users\Vipul-Home\Documents\Visual Studio 2013\Projects\Hospital Management System\Hospital-Management-System\WindowsFormsApplication6\obj\Debug\WindowsFormsApplication6.pdb
+C:\Users\Vipul-Home\Documents\Visual Studio 2013\Projects\Hospital Management System\Hospital-Management-System\WindowsFormsApplication6\obj\Debug\HospitalManagementSystem.csprojResolveAssemblyReference.cache

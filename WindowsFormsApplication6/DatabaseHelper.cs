@@ -17,28 +17,53 @@ namespace WindowsFormsApplication6
                 connection.Open();                  
             }
 
-            public static DataTable LoadPatientData()
+            public static DataTable getPatients()
             {
             SqlDataAdapter sqa = new SqlDataAdapter("select * from patientInfo", connection);
             DataTable dbt = new DataTable();
             sqa.Fill(dbt);
             return dbt; 
         }
+            public static PatientInformation getPatient(int pid)
+            {
+                PatientInformation pi = new PatientInformation();
+                SqlCommand command;
+                SqlDataReader dataReader;
+                string query="select * from patientInfo where pid=" + pid;
+                command = new SqlCommand(query, connection);
+                dataReader = command.ExecuteReader();
+                while(dataReader.Read())
+                {
+                    pi.pid = pid;
+                    pi.date = (string) dataReader["date"];
+                    pi.name = (string)dataReader["name"];
+                    pi.gender = (string)dataReader["gender"];
+                    pi.age = (int)dataReader["age"];
+                    pi.address = (string)dataReader["address"];
+                    pi.disease = (string)dataReader["disease"]; 
+                }
+
+                command.Dispose();
+                return pi;
+            }
+
 
             public static void addPatient(PatientInformation patient)
             {
                 // insert patient to database patient info table. 
                 string query = "insert into patientInfo values(@PID,@Date,@Name,@Gender,@Age,@Address,@Disease)";
 
-                SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@PID", patient.pid);
-                cmd.Parameters.AddWithValue("@Date", patient.date);
-                cmd.Parameters.AddWithValue("@Name", patient.name);
-                cmd.Parameters.AddWithValue("@Gender", patient.gender);
-                cmd.Parameters.AddWithValue("@Age", patient.age);
-                cmd.Parameters.AddWithValue("@Address", patient.address);
-                cmd.Parameters.AddWithValue("@Disease", patient.disease);
-                cmd.ExecuteNonQuery();
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@PID", patient.pid);
+                command.Parameters.AddWithValue("@Date", patient.date);
+                command.Parameters.AddWithValue("@Name", patient.name);
+                command.Parameters.AddWithValue("@Gender", patient.gender);
+                command.Parameters.AddWithValue("@Age", patient.age);
+                command.Parameters.AddWithValue("@Address", patient.address);
+                command.Parameters.AddWithValue("@Disease", patient.disease);
+                command.ExecuteNonQuery();
+
+                command.Dispose();
             }
             public static void closeConnection()
             {

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.txtpid = new System.Windows.Forms.TextBox();
             this.lbldate = new System.Windows.Forms.Label();
             this.lblpid = new System.Windows.Forms.Label();
@@ -41,7 +40,6 @@
             this.rtaddress = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtdisease = new System.Windows.Forms.TextBox();
             this.txtage = new System.Windows.Forms.TextBox();
@@ -50,22 +48,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnsubmit = new System.Windows.Forms.Button();
             this.btnback = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Number";
-            // 
             // txtpid
             // 
-            this.txtpid.Location = new System.Drawing.Point(100, 30);
+            this.txtpid.Location = new System.Drawing.Point(100, 19);
             this.txtpid.Name = "txtpid";
             this.txtpid.Size = new System.Drawing.Size(195, 20);
             this.txtpid.TabIndex = 2;
@@ -82,7 +74,7 @@
             // lblpid
             // 
             this.lblpid.AutoSize = true;
-            this.lblpid.Location = new System.Drawing.Point(7, 33);
+            this.lblpid.Location = new System.Drawing.Point(21, 28);
             this.lblpid.Name = "lblpid";
             this.lblpid.Size = new System.Drawing.Size(25, 13);
             this.lblpid.TabIndex = 4;
@@ -91,7 +83,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 58);
+            this.label4.Location = new System.Drawing.Point(11, 41);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 5;
@@ -156,9 +148,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lbldate);
+            this.groupBox1.Controls.Add(this.lblpid);
+            this.groupBox1.Controls.Add(this.txtpid);
             this.groupBox1.Location = new System.Drawing.Point(232, 55);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(336, 73);
@@ -173,20 +165,12 @@
             this.textBox2.Size = new System.Drawing.Size(195, 20);
             this.textBox2.TabIndex = 5;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(100, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(195, 20);
-            this.textBox1.TabIndex = 4;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtdisease);
             this.groupBox2.Controls.Add(this.txtage);
             this.groupBox2.Controls.Add(this.txtname);
             this.groupBox2.Controls.Add(this.rbnfemale);
-            this.groupBox2.Controls.Add(this.lblpid);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.rtaddress);
             this.groupBox2.Controls.Add(this.label5);
@@ -194,17 +178,16 @@
             this.groupBox2.Controls.Add(this.lblNumber);
             this.groupBox2.Controls.Add(this.rbnmale);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.txtpid);
-            this.groupBox2.Location = new System.Drawing.Point(232, 134);
+            this.groupBox2.Location = new System.Drawing.Point(232, 146);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(336, 260);
+            this.groupBox2.Size = new System.Drawing.Size(336, 237);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Patient\'s Information";
             // 
             // txtdisease
             // 
-            this.txtdisease.Location = new System.Drawing.Point(100, 218);
+            this.txtdisease.Location = new System.Drawing.Point(100, 211);
             this.txtdisease.Name = "txtdisease";
             this.txtdisease.Size = new System.Drawing.Size(195, 20);
             this.txtdisease.TabIndex = 16;
@@ -218,7 +201,7 @@
             // 
             // txtname
             // 
-            this.txtname.Location = new System.Drawing.Point(100, 58);
+            this.txtname.Location = new System.Drawing.Point(100, 38);
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(195, 20);
             this.txtname.TabIndex = 14;
@@ -240,14 +223,14 @@
             this.label2.Font = new System.Drawing.Font("Lucida Fax", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(280, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(265, 27);
+            this.label2.Size = new System.Drawing.Size(270, 27);
             this.label2.TabIndex = 17;
-            this.label2.Text = "Patient Registration";
+            this.label2.Text = "Patient Management";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnsubmit
             // 
-            this.btnsubmit.Location = new System.Drawing.Point(275, 400);
+            this.btnsubmit.Location = new System.Drawing.Point(232, 396);
             this.btnsubmit.Name = "btnsubmit";
             this.btnsubmit.Size = new System.Drawing.Size(75, 23);
             this.btnsubmit.TabIndex = 18;
@@ -257,7 +240,7 @@
             // 
             // btnback
             // 
-            this.btnback.Location = new System.Drawing.Point(377, 400);
+            this.btnback.Location = new System.Drawing.Point(484, 396);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(75, 23);
             this.btnback.TabIndex = 19;
@@ -265,11 +248,42 @@
             this.btnback.UseVisualStyleBackColor = true;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(313, 396);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Update";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(586, 71);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 21;
+            this.button2.Text = "Fetch";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(403, 396);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 22;
+            this.button3.Text = "Delete";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 431);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.btnsubmit);
             this.Controls.Add(this.label2);
@@ -289,7 +303,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtpid;
         private System.Windows.Forms.Label lbldate;
         private System.Windows.Forms.Label lblpid;
@@ -308,8 +321,10 @@
         private System.Windows.Forms.TextBox txtdisease;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnsubmit;
         private System.Windows.Forms.Button btnback;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

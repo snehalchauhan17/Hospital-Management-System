@@ -49,6 +49,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "PatientGrid";
             this.Text = "PatientGrid";
+            this.Load += new System.EventHandler(this.PatientGrid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
