@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+
 
 namespace WindowsFormsApplication6
 {
@@ -31,9 +33,9 @@ namespace WindowsFormsApplication6
         private void btnsubmit_Click(object sender, EventArgs e)
         {
             PatientInformation patient = new PatientInformation();
-            patient.no =Convert.ToInt32(textBox1.Text);
+             patient.pid = Convert.ToInt32(txtpid.Text);
             patient.date = textBox2.Text;
-            patient.pid = Convert.ToInt32(txtpid.Text);
+         
             patient.name = txtname.Text;
             if(rbnmale.Checked)
                 patient.gender = rbnmale.Text;
@@ -43,8 +45,8 @@ namespace WindowsFormsApplication6
             patient.address = rtaddress.Text;
             patient.disease = txtdisease.Text;
 
-            // insert patient to database patient info table. 
-
+            DatabaseHelper.addPatient(patient);
+           
 
             MessageBox.Show("Patient Resistered successfully");
             

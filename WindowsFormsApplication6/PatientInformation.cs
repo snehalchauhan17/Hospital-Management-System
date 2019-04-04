@@ -8,9 +8,8 @@ namespace WindowsFormsApplication6
 {
     class PatientInformation
     {
-        public int no;
-        public string date;
         public int pid;
+        public string date;  
         public string name;
         public string gender;
         public int age;

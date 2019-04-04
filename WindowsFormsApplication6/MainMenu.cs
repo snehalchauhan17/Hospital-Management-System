@@ -16,6 +16,7 @@ namespace WindowsFormsApplication6
         public MainMenu()
         {
             InitializeComponent();
+            DatabaseHelper.initializeConnection();
         }
 
         private void Form2_Load(object sender, EventArgs e)

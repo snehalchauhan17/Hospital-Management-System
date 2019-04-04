@@ -7,4 +7,4 @@
     [age] INT NULL, 
     [address] VARCHAR(50) NULL, 
     [disease] VARCHAR(50) NULL
-)
+);
