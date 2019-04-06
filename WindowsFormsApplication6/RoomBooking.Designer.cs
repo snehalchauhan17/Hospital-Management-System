@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication6
 {
-    partial class RoomInfo
+    partial class RoomBooking
     {
         /// <summary>
         /// Required designer variable.
@@ -42,6 +42,8 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -51,9 +53,9 @@
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.rbnmale);
-            this.groupBox1.Location = new System.Drawing.Point(61, 61);
+            this.groupBox1.Location = new System.Drawing.Point(61, 79);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(362, 107);
+            this.groupBox1.Size = new System.Drawing.Size(362, 115);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Room type";
@@ -97,9 +99,10 @@
             this.label1.Font = new System.Drawing.Font("Lucida Fax", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(139, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(248, 27);
+            this.label1.Size = new System.Drawing.Size(198, 27);
             this.label1.TabIndex = 17;
-            this.label1.Text = "Room Information";
+            this.label1.Text = "Room Booking";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
@@ -147,9 +150,9 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(61, 184);
+            this.groupBox2.Location = new System.Drawing.Point(61, 200);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(362, 142);
+            this.groupBox2.Size = new System.Drawing.Size(362, 148);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Room Info";
@@ -182,16 +185,35 @@
             this.textBox1.Size = new System.Drawing.Size(135, 20);
             this.textBox1.TabIndex = 23;
             // 
-            // RoomInfo
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(82, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(25, 13);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "PID";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(202, 53);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(135, 20);
+            this.textBox5.TabIndex = 28;
+            // 
+            // RoomBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 338);
+            this.ClientSize = new System.Drawing.Size(556, 376);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
-            this.Name = "RoomInfo";
+            this.Name = "RoomBooking";
             this.Text = "RoomInfo";
+            this.Load += new System.EventHandler(this.RoomBooking_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -217,5 +239,7 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }

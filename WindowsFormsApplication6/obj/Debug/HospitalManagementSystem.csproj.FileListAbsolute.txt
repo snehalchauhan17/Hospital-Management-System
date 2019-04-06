@@ -23,3 +23,7 @@ C:\Users\Vipul-Home\Documents\Visual Studio 2013\Projects\Hospital Management Sy
 C:\Users\Vipul-Home\Documents\Visual Studio 2013\Projects\Hospital Management System\Hospital-Management-System\WindowsFormsApplication6\obj\Debug\WindowsFormsApplication6.exe
 C:\Users\Vipul-Home\Documents\Visual Studio 2013\Projects\Hospital Management System\Hospital-Management-System\WindowsFormsApplication6\obj\Debug\WindowsFormsApplication6.pdb
 C:\Users\Vipul-Home\Documents\Visual Studio 2013\Projects\Hospital Management System\Hospital-Management-System\WindowsFormsApplication6\obj\Debug\HospitalManagementSystem.csprojResolveAssemblyReference.cache
+C:\Users\Vipul-Home\Documents\Visual Studio 2013\Projects\Hospital Management System\Hospital-Management-System\WindowsFormsApplication6\obj\Debug\WindowsFormsApplication6.StaffInformation.resources
+C:\Users\Vipul-Home\Documents\Visual Studio 2013\Projects\Hospital Management System\Hospital-Management-System\WindowsFormsApplication6\bin\Debug\MainMenu.resx
+C:\Users\Vipul-Home\Documents\Visual Studio 2013\Projects\Hospital Management System\Hospital-Management-System\WindowsFormsApplication6\bin\Debug\MainMenu.cs
+C:\Users\Vipul-Home\Documents\Visual Studio 2013\Projects\Hospital Management System\Hospital-Management-System\WindowsFormsApplication6\bin\Debug\MainMenu.Designer.cs

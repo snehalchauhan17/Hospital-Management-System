@@ -42,7 +42,7 @@ namespace WindowsFormsApplication6
                     pi.address = (string)dataReader["address"];
                     pi.disease = (string)dataReader["disease"]; 
                 }
-
+                dataReader.Close();
                 command.Dispose();
                 return pi;
             }
@@ -52,7 +52,29 @@ namespace WindowsFormsApplication6
             {
                 // insert patient to database patient info table. 
                 string query = "insert into patientInfo values(@PID,@Date,@Name,@Gender,@Age,@Address,@Disease)";
+                modifyPatient(patient, query);
+            }
 
+
+
+            public static void updatePatient(PatientInformation patient)
+            {
+                string query = "update PatientInfo set  date=@Date,name=@Name,gender=@Gender,age=@Age,address=@Address,disease=@Disease where pid=@PID";
+                modifyPatient(patient, query);              
+                
+            }
+        public static void deletePatient(int pid)
+            {       
+
+                 string query = "delete from PatientInfo where pid=@PID";
+                 SqlCommand command = new SqlCommand(query, connection);
+                 command.Parameters.AddWithValue("@PID", pid);
+                 command.ExecuteNonQuery();
+                 command.Dispose();
+            }
+
+            private static void modifyPatient(PatientInformation patient, string query)
+            {
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@PID", patient.pid);
                 command.Parameters.AddWithValue("@Date", patient.date);
@@ -62,9 +84,9 @@ namespace WindowsFormsApplication6
                 command.Parameters.AddWithValue("@Address", patient.address);
                 command.Parameters.AddWithValue("@Disease", patient.disease);
                 command.ExecuteNonQuery();
-
                 command.Dispose();
             }
+
             public static void closeConnection()
             {
             connection.Close();

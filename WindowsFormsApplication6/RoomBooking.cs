@@ -10,14 +10,24 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication6
 {
-    public partial class RoomInfo : Form
+    public partial class RoomBooking : Form
     {
-        public RoomInfo()
+        public RoomBooking()
         {
             InitializeComponent();
         }
 
         private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RoomBooking_Load(object sender, EventArgs e)
         {
 
         }

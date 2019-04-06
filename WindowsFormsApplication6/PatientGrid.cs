@@ -34,5 +34,12 @@ namespace WindowsFormsApplication6
         {
 
         }
+
+        private void btnback_Click(object sender, EventArgs e)
+        {
+            MainMenu f = new MainMenu();
+            f.Show();
+            this.Hide();
+        }
     }
 }
