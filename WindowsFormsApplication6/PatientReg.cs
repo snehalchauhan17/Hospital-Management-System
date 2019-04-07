@@ -63,8 +63,16 @@ namespace WindowsFormsApplication6
             PatientInformation pi = DatabaseHelper.getPatient(Convert.ToInt32(txtpid.Text));
             textBox2.Text = pi.date;
             txtname.Text=pi.name;
-            rbnmale.Text = pi.gender;
-            rbnfemale.Text = pi.gender;
+            switch(pi.gender){
+                case "male" :
+                    rbnmale.Checked = true;
+                    break;
+                case "female" :
+                    rbnfemale.Checked = true;
+                    break;
+            }
+           
+          
             txtage.Text =Convert.ToString(pi.age);
             rtaddress.Text = pi.address;
             txtdisease.Text = pi.disease;
@@ -88,6 +96,8 @@ namespace WindowsFormsApplication6
         {
 
         }
+
+      
 
 
        

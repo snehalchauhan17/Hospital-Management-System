@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication6
 {
-    partial class PatientGrid
+    partial class roomGrid
     {
         /// <summary>
         /// Required designer variable.
@@ -36,31 +36,31 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 36);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(770, 438);
+            this.dataGridView1.Size = new System.Drawing.Size(568, 279);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnback
             // 
-            this.btnback.Location = new System.Drawing.Point(325, 472);
+            this.btnback.Location = new System.Drawing.Point(235, 340);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(75, 23);
-            this.btnback.TabIndex = 20;
+            this.btnback.TabIndex = 1;
             this.btnback.Text = "Back";
             this.btnback.UseVisualStyleBackColor = true;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
-            // PatientGrid
+            // roomInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 550);
+            this.ClientSize = new System.Drawing.Size(592, 375);
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "PatientGrid";
-            this.Text = "PatientGrid";
+            this.Name = "roomInfo";
+            this.Text = "roomInfo";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

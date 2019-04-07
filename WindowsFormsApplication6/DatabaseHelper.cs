@@ -86,7 +86,72 @@ namespace WindowsFormsApplication6
                 command.ExecuteNonQuery();
                 command.Dispose();
             }
+//roominformation
+         
+            public static DataTable getRooms()
+            {
+                SqlDataAdapter sqa = new SqlDataAdapter("select * from roombooking", connection);
+                DataTable dbt = new DataTable();
+                sqa.Fill(dbt);
+                return dbt; 
+            }
+            public static roomInformation getRoom(int pid)
+            {
+                roomInformation r = new roomInformation();
+                SqlCommand command;
+                SqlDataReader dataReader;
+                string query = "select * from roombooking where pid=" + pid;
+                command = new SqlCommand(query, connection);
+                dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    r.pid = pid;
+                    r.Roomtype = (string)dataReader["roomtype"];
+                    r.Status = (string)dataReader["Status"];
+                    r.Startdate = (string)dataReader["Startdate"];
+                    r.Enddate = (string)dataReader["Enddate"];
+                    r.Roomno = (int)dataReader["Roomno"];
+                    r.Price = (int)dataReader["Price"];
+                }
+                dataReader.Close();
+                command.Dispose();
+                return r;
+            }
+            public static void addRoom(roomInformation room)
+            {
+                // insert patient to database patient info table. 
+                string query = "insert into roombooking values(@PID,@Roomtype,@Status,@Startdate,@Enddate,@Roomno,@Price)";
+                modifyRoom(room, query);
+            }
+            public static void updateRoom(roomInformation room)
+            {
+                string query = "update roombooking set Roomtype=@Roomtype,Status=@Status,Startdate=@Startdate,Enddate=@Enddate,Roomno=@Roomno,Price=@Price where pid=@PID";
+                modifyRoom(room, query);
 
+            }
+            private static void modifyRoom(roomInformation room, string query)
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@pid", room.pid);
+                command.Parameters.AddWithValue("@Roomtype", room.Roomtype);
+                command.Parameters.AddWithValue("@Status", room.Status);
+                command.Parameters.AddWithValue("@Startdate", room.Startdate);
+                command.Parameters.AddWithValue("@Enddate", room.Enddate);
+                command.Parameters.AddWithValue("@Roomno", room.Roomno);
+                command.Parameters.AddWithValue("@Price", room.Price);
+                command.ExecuteNonQuery();
+                command.Dispose();
+            }
+          
+            public static void deleteRoom(int pid)
+            {
+
+                string query = "delete from roombooking where pid=@PID";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@PID", pid);
+                command.ExecuteNonQuery();
+                command.Dispose();
+            }
             public static void closeConnection()
             {
             connection.Close();

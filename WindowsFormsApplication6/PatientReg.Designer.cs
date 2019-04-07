@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.txtpid = new System.Windows.Forms.TextBox();
             this.lbldate = new System.Windows.Forms.Label();
             this.lblpid = new System.Windows.Forms.Label();
@@ -146,13 +147,15 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.AliceBlue;
             this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.lbldate);
             this.groupBox1.Controls.Add(this.lblpid);
             this.groupBox1.Controls.Add(this.txtpid);
-            this.groupBox1.Location = new System.Drawing.Point(232, 55);
+            this.groupBox1.Location = new System.Drawing.Point(34, 79);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(336, 73);
+            this.groupBox1.Size = new System.Drawing.Size(397, 73);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Resistration Id";
@@ -166,6 +169,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.AliceBlue;
             this.groupBox2.Controls.Add(this.txtdisease);
             this.groupBox2.Controls.Add(this.txtage);
             this.groupBox2.Controls.Add(this.txtname);
@@ -177,9 +181,9 @@
             this.groupBox2.Controls.Add(this.lblNumber);
             this.groupBox2.Controls.Add(this.rbnmale);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Location = new System.Drawing.Point(232, 146);
+            this.groupBox2.Location = new System.Drawing.Point(34, 167);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(336, 237);
+            this.groupBox2.Size = new System.Drawing.Size(397, 237);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Patient\'s Information";
@@ -219,8 +223,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.AliceBlue;
             this.label2.Font = new System.Drawing.Font("Lucida Fax", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(280, 9);
+            this.label2.Location = new System.Drawing.Point(89, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(270, 27);
             this.label2.TabIndex = 17;
@@ -228,61 +233,67 @@
             // 
             // btnsubmit
             // 
-            this.btnsubmit.Location = new System.Drawing.Point(232, 396);
+            this.btnsubmit.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnsubmit.Location = new System.Drawing.Point(43, 422);
             this.btnsubmit.Name = "btnsubmit";
-            this.btnsubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnsubmit.Size = new System.Drawing.Size(75, 33);
             this.btnsubmit.TabIndex = 18;
             this.btnsubmit.Text = "Submit";
-            this.btnsubmit.UseVisualStyleBackColor = true;
+            this.btnsubmit.UseVisualStyleBackColor = false;
             this.btnsubmit.Click += new System.EventHandler(this.btnsubmit_Click);
             // 
             // btnback
             // 
-            this.btnback.Location = new System.Drawing.Point(484, 396);
+            this.btnback.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnback.Location = new System.Drawing.Point(347, 422);
             this.btnback.Name = "btnback";
-            this.btnback.Size = new System.Drawing.Size(75, 23);
+            this.btnback.Size = new System.Drawing.Size(75, 33);
             this.btnback.TabIndex = 19;
             this.btnback.Text = "Back";
-            this.btnback.UseVisualStyleBackColor = true;
+            this.btnback.UseVisualStyleBackColor = false;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(313, 396);
+            this.button1.BackColor = System.Drawing.Color.AliceBlue;
+            this.button1.Location = new System.Drawing.Point(149, 422);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 33);
             this.button1.TabIndex = 20;
             this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnupdate);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(586, 71);
+            this.button2.BackColor = System.Drawing.Color.AliceBlue;
+            this.button2.Location = new System.Drawing.Point(301, 18);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 21;
             this.button2.Text = "Fetch";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.btnfetch);
             // 
             // btndelete
             // 
-            this.btndelete.Location = new System.Drawing.Point(403, 396);
+            this.btndelete.BackColor = System.Drawing.Color.AliceBlue;
+            this.btndelete.Location = new System.Drawing.Point(254, 422);
             this.btndelete.Name = "btndelete";
-            this.btndelete.Size = new System.Drawing.Size(75, 23);
+            this.btndelete.Size = new System.Drawing.Size(75, 33);
             this.btndelete.TabIndex = 22;
             this.btndelete.Text = "Delete";
-            this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.UseVisualStyleBackColor = false;
             this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(813, 431);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(620, 478);
             this.Controls.Add(this.btndelete);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.btnsubmit);

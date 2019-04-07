@@ -44,6 +44,19 @@ namespace WindowsFormsApplication6
             DatabaseHelper.closeConnection();
         }
 
+          private void button1_Click(object sender, EventArgs e)
+          {
+              RoomBooking ro = new RoomBooking();
+              ro.Show();
+              this.Hide();
+          }
+
+          private void button2_Click(object sender, EventArgs e)
+          {
+              roomGrid ro = new roomGrid();
+              ro.Show();
+          }
+
        
     }
 }
