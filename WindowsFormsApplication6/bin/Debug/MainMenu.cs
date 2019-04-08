@@ -16,7 +16,7 @@ namespace WindowsFormsApplication6
         public MainMenu()
         {
             InitializeComponent();
-            DatabaseHelper.initializeConnection();
+           
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -39,10 +39,7 @@ namespace WindowsFormsApplication6
             PatientGrid p = new PatientGrid();
             p.Show();
         }
-          private void btnlogout_Click(object sender, EventArgs e)
-        {
-            DatabaseHelper.closeConnection();
-        }
+        
 
           private void button1_Click(object sender, EventArgs e)
           {
@@ -55,6 +52,13 @@ namespace WindowsFormsApplication6
           {
               roomGrid ro = new roomGrid();
               ro.Show();
+          }
+
+          private void button5_Click(object sender, EventArgs e)
+          {
+              BillPayment b = new BillPayment();
+              b.Show();
+              this.Hide();
           }
 
        

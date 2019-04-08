@@ -10,18 +10,16 @@ namespace WindowsFormsApplication6
     class DatabaseHelper
     {
 
-           public static  string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Vipul-Home\Documents\Visual Studio 2013\Projects\Hospital Management System\Hospital-Management-System\sql\hmsdb.mdf;Integrated Security=True;Connect Timeout=30";  
-           public static  SqlConnection connection;
-            public static void initializeConnection(){
-                connection = new SqlConnection(connetionString);
-                connection.Open();                  
-            }
-
+           public static  string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=hmsdb.mdf Integrated Security=True;Connect Timeout=30";
+           public static SqlConnection connection = new SqlConnection(connetionString);
+           
             public static DataTable getPatients()
             {
+                connection.Open(); 
             SqlDataAdapter sqa = new SqlDataAdapter("select * from patientInfo", connection);
             DataTable dbt = new DataTable();
             sqa.Fill(dbt);
+            connection.Close();
             return dbt; 
         }
             public static PatientInformation getPatient(int pid)
@@ -30,6 +28,7 @@ namespace WindowsFormsApplication6
                 SqlCommand command;
                 SqlDataReader dataReader;
                 string query="select * from patientInfo where pid=" + pid;
+                connection.Open(); 
                 command = new SqlCommand(query, connection);
                 dataReader = command.ExecuteReader();
                 while(dataReader.Read())
@@ -44,7 +43,9 @@ namespace WindowsFormsApplication6
                 }
                 dataReader.Close();
                 command.Dispose();
+                connection.Close();
                 return pi;
+        
             }
 
 
@@ -64,17 +65,19 @@ namespace WindowsFormsApplication6
                 
             }
         public static void deletePatient(int pid)
-            {       
-
+            {
+                connection.Open(); 
                  string query = "delete from PatientInfo where pid=@PID";
                  SqlCommand command = new SqlCommand(query, connection);
                  command.Parameters.AddWithValue("@PID", pid);
                  command.ExecuteNonQuery();
                  command.Dispose();
-            }
+                 connection.Close();    
+        }
 
             private static void modifyPatient(PatientInformation patient, string query)
             {
+                connection.Open(); 
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@PID", patient.pid);
                 command.Parameters.AddWithValue("@Date", patient.date);
@@ -85,15 +88,19 @@ namespace WindowsFormsApplication6
                 command.Parameters.AddWithValue("@Disease", patient.disease);
                 command.ExecuteNonQuery();
                 command.Dispose();
+                connection.Close();
             }
 //roominformation
          
             public static DataTable getRooms()
             {
+                connection.Open(); 
                 SqlDataAdapter sqa = new SqlDataAdapter("select * from roombooking", connection);
                 DataTable dbt = new DataTable();
                 sqa.Fill(dbt);
-                return dbt; 
+                connection.Close();
+                return dbt;
+               
             }
             public static roomInformation getRoom(int pid)
             {
@@ -101,6 +108,7 @@ namespace WindowsFormsApplication6
                 SqlCommand command;
                 SqlDataReader dataReader;
                 string query = "select * from roombooking where pid=" + pid;
+                connection.Open(); 
                 command = new SqlCommand(query, connection);
                 dataReader = command.ExecuteReader();
                 while (dataReader.Read())
@@ -115,7 +123,9 @@ namespace WindowsFormsApplication6
                 }
                 dataReader.Close();
                 command.Dispose();
+                connection.Close();
                 return r;
+            
             }
             public static void addRoom(roomInformation room)
             {
@@ -131,6 +141,7 @@ namespace WindowsFormsApplication6
             }
             private static void modifyRoom(roomInformation room, string query)
             {
+                connection.Open(); 
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@pid", room.pid);
                 command.Parameters.AddWithValue("@Roomtype", room.Roomtype);
@@ -141,23 +152,20 @@ namespace WindowsFormsApplication6
                 command.Parameters.AddWithValue("@Price", room.Price);
                 command.ExecuteNonQuery();
                 command.Dispose();
+                connection.Close();
             }
           
             public static void deleteRoom(int pid)
             {
-
+                connection.Open(); 
                 string query = "delete from roombooking where pid=@PID";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@PID", pid);
                 command.ExecuteNonQuery();
                 command.Dispose();
+                connection.Close();
             }
-            public static void closeConnection()
-            {
-            connection.Close();
-        }
            
-            
 
     }
 }
