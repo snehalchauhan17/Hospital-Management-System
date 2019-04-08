@@ -29,6 +29,8 @@ namespace WindowsFormsApplication6
             b.Roomno = r.Roomno;
             b.Price = r.Price;
             textptname.Text = b.name;
+            txtroomno.Text = Convert.ToString( b.Roomno);
+            txtroomrent.Text = Convert.ToString(b.Price);
 
             }
 
@@ -44,8 +46,13 @@ namespace WindowsFormsApplication6
                 b.doctorCharges = Convert.ToInt32(textdoctor.Text);
                 b.otherCharges = Convert.ToInt32(textOther.Text);
                 b.total = b.Price + b.reportCharges + b.medicineCharges + b.doctorCharges + b.otherCharges;
-
+                txttotal.Text =Convert.ToString( b.total);
             }
+
+        private void BillPayment_Load(object sender, EventArgs e)
+        {
+
+        }
 
         
         

@@ -42,13 +42,13 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textPID = new System.Windows.Forms.TextBox();
             this.textptname = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtroomno = new System.Windows.Forms.TextBox();
             this.textdoctor = new System.Windows.Forms.TextBox();
             this.textmdcn = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtroomrent = new System.Windows.Forms.TextBox();
             this.textRpt = new System.Windows.Forms.TextBox();
             this.textOther = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txttotal = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnfetch = new System.Windows.Forms.Button();
@@ -176,12 +176,12 @@
             this.textptname.Size = new System.Drawing.Size(117, 20);
             this.textptname.TabIndex = 69;
             // 
-            // textBox3
+            // txtroomno
             // 
-            this.textBox3.Location = new System.Drawing.Point(151, 223);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(117, 20);
-            this.textBox3.TabIndex = 70;
+            this.txtroomno.Location = new System.Drawing.Point(151, 223);
+            this.txtroomno.Name = "txtroomno";
+            this.txtroomno.Size = new System.Drawing.Size(117, 20);
+            this.txtroomno.TabIndex = 70;
             // 
             // textdoctor
             // 
@@ -197,12 +197,12 @@
             this.textmdcn.Size = new System.Drawing.Size(117, 20);
             this.textmdcn.TabIndex = 72;
             // 
-            // textBox6
+            // txtroomrent
             // 
-            this.textBox6.Location = new System.Drawing.Point(151, 267);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(117, 20);
-            this.textBox6.TabIndex = 73;
+            this.txtroomrent.Location = new System.Drawing.Point(151, 267);
+            this.txtroomrent.Name = "txtroomrent";
+            this.txtroomrent.Size = new System.Drawing.Size(117, 20);
+            this.txtroomrent.TabIndex = 73;
             // 
             // textRpt
             // 
@@ -218,12 +218,12 @@
             this.textOther.Size = new System.Drawing.Size(117, 20);
             this.textOther.TabIndex = 75;
             // 
-            // textBox10
+            // txttotal
             // 
-            this.textBox10.Location = new System.Drawing.Point(472, 263);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(117, 20);
-            this.textBox10.TabIndex = 76;
+            this.txttotal.Location = new System.Drawing.Point(472, 263);
+            this.txttotal.Name = "txttotal";
+            this.txttotal.Size = new System.Drawing.Size(117, 20);
+            this.txttotal.TabIndex = 76;
             // 
             // label9
             // 
@@ -275,13 +275,13 @@
             this.Controls.Add(this.btncalculate);
             this.Controls.Add(this.btnfetch);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.txttotal);
             this.Controls.Add(this.textOther);
             this.Controls.Add(this.textRpt);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtroomrent);
             this.Controls.Add(this.textmdcn);
             this.Controls.Add(this.textdoctor);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtroomno);
             this.Controls.Add(this.textptname);
             this.Controls.Add(this.textPID);
             this.Controls.Add(this.textBox9);
@@ -299,6 +299,7 @@
             this.Controls.Add(this.label1);
             this.Name = "BillPayment";
             this.Text = "Bill Payment";
+            this.Load += new System.EventHandler(this.BillPayment_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,13 +321,13 @@
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textPID;
         private System.Windows.Forms.TextBox textptname;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtroomno;
         private System.Windows.Forms.TextBox textdoctor;
         private System.Windows.Forms.TextBox textmdcn;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtroomrent;
         private System.Windows.Forms.TextBox textRpt;
         private System.Windows.Forms.TextBox textOther;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txttotal;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnfetch;
