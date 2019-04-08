@@ -10,7 +10,7 @@ namespace WindowsFormsApplication6
     class DatabaseHelper
     {
 
-           public static  string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=hmsdb.mdf Integrated Security=True;Connect Timeout=30";
+        public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=F:\VipulDev\workspaces\net\Hospital-Management-System\WindowsFormsApplication6\hmsdb.mdf;Integrated Security=True;Connect Timeout=30";
            public static SqlConnection connection = new SqlConnection(connetionString);
            
             public static DataTable getPatients()

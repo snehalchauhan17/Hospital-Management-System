@@ -17,7 +17,7 @@ namespace WindowsFormsApplication6
             InitializeComponent();
         }
 
-      
+
 
         private void RoomBooking_Load(object sender, EventArgs e)
         {
@@ -29,26 +29,26 @@ namespace WindowsFormsApplication6
             roomInformation r = DatabaseHelper.getRoom(Convert.ToInt32(txtpid.Text));
             switch (r.Roomtype)
             {
-                case "sharing":
+                case "Sharing":
                     rbnsharing.Checked = true;
                     break;
-                case "single":
+                case "Single":
                     rbnsingle.Checked = true;
                     break;
-                case "delux":
+                case "Delux":
                     rbndelux.Checked = true;
                     break;
-                case "suite":
+                case "Suite":
                     rbnsuite.Checked = true;
                     break;
             }
-           
-     
-           txtroomno.Text = Convert.ToString(r.Roomno);
-           txtstatus.Text =r.Status;
-           txtstartdate.Text = Convert.ToString(r.Startdate);
-           txtenddate.Text = Convert.ToString(r.Enddate);
-           txtprice.Text = Convert.ToString(r.Price);
+
+
+            txtroomno.Text = Convert.ToString(r.Roomno);
+            txtstatus.Text = r.Status;
+            txtstartdate.Text = Convert.ToString(r.Startdate);
+            txtenddate.Text = Convert.ToString(r.Enddate);
+            txtprice.Text = Convert.ToString(r.Price);
 
 
         }
@@ -61,7 +61,7 @@ namespace WindowsFormsApplication6
 
 
             MessageBox.Show("Room Resistered successfully");
-            
+
         }
 
         private void btnupdate_Click(object sender, EventArgs e)
@@ -74,9 +74,9 @@ namespace WindowsFormsApplication6
         {
             roomInformation room = new roomInformation();
             room.pid = Convert.ToInt32(txtpid.Text);
-           
 
-          
+
+
             if (rbnsharing.Checked)
                 room.Roomtype = rbnsharing.Text;
             else if (rbnsingle.Checked)
@@ -85,7 +85,7 @@ namespace WindowsFormsApplication6
                 room.Roomtype = rbndelux.Text;
             else
                 room.Roomtype = rbnsuite.Text;
-            room.Status =txtstatus.Text;
+            room.Status = txtstatus.Text;
             room.Startdate = txtstartdate.Text;
             room.Enddate = txtenddate.Text;
             room.Roomno = Convert.ToInt32(txtroomno.Text);

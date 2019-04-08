@@ -25,12 +25,8 @@ namespace WindowsFormsApplication6
       private void btnsubmit_Click(object sender, EventArgs e)
         {
             PatientInformation patient = patientInfoFromForm();
-
-            DatabaseHelper.addPatient(patient);
-           
-
-            MessageBox.Show("Patient Resistered successfully");
-            
+            DatabaseHelper.addPatient(patient);         
+            MessageBox.Show("Patient Resistered successfully");            
         }
 
       private PatientInformation patientInfoFromForm()
@@ -64,10 +60,10 @@ namespace WindowsFormsApplication6
             textBox2.Text = pi.date;
             txtname.Text=pi.name;
             switch(pi.gender){
-                case "male" :
+                case "Male" :
                     rbnmale.Checked = true;
                     break;
-                case "female" :
+                case "Female" :
                     rbnfemale.Checked = true;
                     break;
             }
