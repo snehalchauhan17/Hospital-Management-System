@@ -37,6 +37,7 @@
             this.btnlogout = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnpatientresistration
@@ -90,24 +91,24 @@
             // 
             this.btnclose.BackColor = System.Drawing.Color.Lavender;
             this.btnclose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnclose.Location = new System.Drawing.Point(336, 415);
+            this.btnclose.Location = new System.Drawing.Point(336, 434);
             this.btnclose.Name = "btnclose";
             this.btnclose.Size = new System.Drawing.Size(75, 32);
             this.btnclose.TabIndex = 7;
             this.btnclose.Text = "Close";
             this.btnclose.UseVisualStyleBackColor = false;
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
             // btnlogout
             // 
             this.btnlogout.BackColor = System.Drawing.Color.Lavender;
             this.btnlogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlogout.Location = new System.Drawing.Point(186, 415);
+            this.btnlogout.Location = new System.Drawing.Point(186, 434);
             this.btnlogout.Name = "btnlogout";
             this.btnlogout.Size = new System.Drawing.Size(75, 32);
             this.btnlogout.TabIndex = 8;
             this.btnlogout.Text = "Log out";
             this.btnlogout.UseVisualStyleBackColor = false;
-   
             // 
             // button1
             // 
@@ -133,6 +134,18 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Lavender;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(186, 389);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(225, 43);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "Bill Payment Info";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,6 +153,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(620, 478);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnlogout);
@@ -166,5 +180,6 @@
         private System.Windows.Forms.Button btnlogout;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button4;
     }
 }

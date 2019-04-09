@@ -37,9 +37,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnadd = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtbillid = new System.Windows.Forms.TextBox();
             this.textPID = new System.Windows.Forms.TextBox();
             this.textptname = new System.Windows.Forms.TextBox();
             this.txtroomno = new System.Windows.Forms.TextBox();
@@ -53,6 +53,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnfetch = new System.Windows.Forms.Button();
             this.btncalculate = new System.Windows.Forms.Button();
+            this.btnback = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -137,14 +138,15 @@
             this.label11.TabIndex = 63;
             this.label11.Text = "Total";
             // 
-            // button1
+            // btnadd
             // 
-            this.button1.Location = new System.Drawing.Point(193, 333);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 64;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnadd.Location = new System.Drawing.Point(193, 333);
+            this.btnadd.Name = "btnadd";
+            this.btnadd.Size = new System.Drawing.Size(75, 23);
+            this.btnadd.TabIndex = 64;
+            this.btnadd.Text = "Add";
+            this.btnadd.UseVisualStyleBackColor = true;
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // button2
             // 
@@ -154,13 +156,14 @@
             this.button2.TabIndex = 65;
             this.button2.Text = "Reset";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox9
+            // txtbillid
             // 
-            this.textBox9.Location = new System.Drawing.Point(151, 113);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(117, 20);
-            this.textBox9.TabIndex = 67;
+            this.txtbillid.Location = new System.Drawing.Point(151, 113);
+            this.txtbillid.Name = "txtbillid";
+            this.txtbillid.Size = new System.Drawing.Size(117, 20);
+            this.txtbillid.TabIndex = 67;
             // 
             // textPID
             // 
@@ -267,11 +270,23 @@
             this.btncalculate.UseVisualStyleBackColor = true;
             this.btncalculate.Click += new System.EventHandler(this.btncalculate_Click);
             // 
+            // btnback
+            // 
+            this.btnback.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnback.Location = new System.Drawing.Point(455, 328);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(75, 33);
+            this.btnback.TabIndex = 80;
+            this.btnback.Text = "Back";
+            this.btnback.UseVisualStyleBackColor = false;
+            this.btnback.Click += new System.EventHandler(this.btnback_Click);
+            // 
             // BillPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(685, 403);
+            this.Controls.Add(this.btnback);
             this.Controls.Add(this.btncalculate);
             this.Controls.Add(this.btnfetch);
             this.Controls.Add(this.label9);
@@ -284,10 +299,10 @@
             this.Controls.Add(this.txtroomno);
             this.Controls.Add(this.textptname);
             this.Controls.Add(this.textPID);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.txtbillid);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnadd);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -316,9 +331,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnadd;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtbillid;
         private System.Windows.Forms.TextBox textPID;
         private System.Windows.Forms.TextBox textptname;
         private System.Windows.Forms.TextBox txtroomno;
@@ -332,6 +347,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnfetch;
         private System.Windows.Forms.Button btncalculate;
+        private System.Windows.Forms.Button btnback;
 
     }
 }

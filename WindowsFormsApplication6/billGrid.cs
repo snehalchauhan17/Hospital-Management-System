@@ -8,27 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication6
+namespace hms
 {
-    public partial class roomGrid : Form
+    public partial class billGrid : Form
     {
-        public roomGrid()
+        public billGrid()
         {
             InitializeComponent();
-            this.dataGridView1.DataSource = DatabaseHelper.getRooms(); 
- 
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            this.dataGridView1.DataSource = DatabaseHelper.getBills();
         }
 
         private void btnback_Click(object sender, EventArgs e)
         {
             MainMenu f = new MainMenu();
-            f.Show();
+            f.show();
             this.Hide();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+         
         }
     }
 }

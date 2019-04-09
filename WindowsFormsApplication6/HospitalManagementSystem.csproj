@@ -73,6 +73,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bill.cs" />
+    <Compile Include="billGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="billGrid.Designer.cs">
+      <DependentUpon>billGrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseHelper.cs" />
     <Compile Include="PatientGrid.cs">
       <SubType>Form</SubType>
@@ -122,6 +128,9 @@
     <Compile Include="Bill Payment.Designer.cs">
       <DependentUpon>Bill Payment.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="billGrid.resx">
+      <DependentUpon>billGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

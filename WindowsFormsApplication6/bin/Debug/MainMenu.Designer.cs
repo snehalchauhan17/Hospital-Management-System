@@ -96,6 +96,7 @@
             this.btnclose.TabIndex = 7;
             this.btnclose.Text = "Close";
             this.btnclose.UseVisualStyleBackColor = false;
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
             // btnlogout
             // 
@@ -107,7 +108,6 @@
             this.btnlogout.TabIndex = 8;
             this.btnlogout.Text = "Log out";
             this.btnlogout.UseVisualStyleBackColor = false;
-   
             // 
             // button1
             // 

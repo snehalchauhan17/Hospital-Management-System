@@ -11,7 +11,7 @@ namespace WindowsFormsApplication6
         public int pid;
         public string name;
         public int Roomno;
-        public int Price;
+        public int RoomRent;
         public int medicineCharges;
         public int doctorCharges;
         public int reportCharges;

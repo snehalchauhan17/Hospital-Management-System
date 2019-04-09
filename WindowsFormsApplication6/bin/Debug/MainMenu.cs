@@ -61,6 +61,11 @@ namespace WindowsFormsApplication6
               this.Hide();
           }
 
+          private void btnclose_Click(object sender, EventArgs e)
+          {
+              Close();
+          }
+
        
     }
 }

@@ -170,7 +170,64 @@ namespace WindowsFormsApplication6
                 command.Dispose();
                 connection.Close();
             }
-           
+        //BillPayment
+            public static DataTable getBills()
+            {
+                connection.Open();
+                SqlDataAdapter sqa = new SqlDataAdapter("select * from BillPayment", connection);
+                DataTable dbt = new DataTable();
+                sqa.Fill(dbt);
+                connection.Close();
+                return dbt;
+
+            }
+            public static Bill getBill(int pid)
+            {
+                Bill b = new Bill();
+                SqlCommand command;
+                SqlDataReader dataReader;
+                string query = "select * from BillPayment where pid=" + pid;
+                connection.Open();
+                command = new SqlCommand(query, connection);
+                dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    b.pid = pid;
+                    b.RoomRent = (int)dataReader["RoomRent"];
+                    b.medicineCharges = (int)dataReader["medicineCharges"];
+                    b.doctorCharges = (int)dataReader["doctorCharges"];
+                    b.reportCharges = (int)dataReader["reportCharges"];
+                    b.otherCharges = (int)dataReader["otherCharges"];
+                    b.total = (int)dataReader["total"];
+                }
+                dataReader.Close();
+                command.Dispose();
+                connection.Close();
+                return b;
+
+            }
+            public static void addBill(Bill bill)
+            {
+                // insert patient to database patient info table. 
+                string query = "insert into BillPayment values(@PID,@RoomRent,@medicineCharges,@doctorCharges,@reportCharges,@otherCharges,@total)";
+                modifybill(bill, query);
+            }
+            private static void modifybill(Bill bill, string query)
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@PID", bill.pid);
+                command.Parameters.AddWithValue("@RoomRent", bill.RoomRent);
+                command.Parameters.AddWithValue("@medicineCharges", bill.medicineCharges);
+                command.Parameters.AddWithValue("@doctorCharges", bill.doctorCharges);
+                command.Parameters.AddWithValue("@reportCharges", bill.reportCharges);
+                command.Parameters.AddWithValue("@otherCharges", bill.otherCharges);
+                command.Parameters.AddWithValue("@total", bill.total);
+                command.ExecuteNonQuery();
+                command.Dispose();
+                connection.Close();
+            }
+          
 
     }
 }
