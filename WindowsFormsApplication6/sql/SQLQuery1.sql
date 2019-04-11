@@ -1,11 +1,10 @@
 ﻿CREATE TABLE [dbo].[roombooking] (
-    [PID]       INT        NOT NULL,
-    [RoomType]  VARCHAR (10) NOT NULL,
-    [Roomno]    INT        NOT NULL,
-    [Price]     INT        NOT NULL,
-    [Status]    VARCHAR (10) NOT NULL,
-    [StartDate] VARCHAR (20) NOT NULL,
-    [EndDate]   VARCHAR (20) NOT NULL,
+    [PID]        INT          NOT NULL,
+    [RoomType]   VARCHAR (10) NOT NULL,
+    [Roomno]     INT          NOT NULL,
+    [Price]      INT          NOT NULL,
+    [startDate] VARCHAR(50) NOT NULL, 
+    [endDate] VARCHAR(50) NOT NULL, 
     CONSTRAINT [PK_roombooking] PRIMARY KEY CLUSTERED ([PID] ASC)
 );
 

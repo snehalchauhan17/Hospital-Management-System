@@ -45,7 +45,7 @@ namespace WindowsFormsApplication6
 
 
             txtroomno.Text = Convert.ToString(r.Roomno);
-            txtstatus.Text = Convert.ToString(r.Status);
+          
             txtstartdate.Text = Convert.ToString(r.Startdate);
             txtenddate.Text = Convert.ToString(r.Enddate);
             txtprice.Text = Convert.ToString(r.Price);
@@ -74,9 +74,10 @@ namespace WindowsFormsApplication6
         {
             roomInformation room = new roomInformation();
             room.pid = Convert.ToInt32(txtpid.Text);
-
-
-
+            room.Startdate = txtstartdate.Text;
+            room.Enddate = txtenddate.Text;
+            room.Roomno = Convert.ToInt32(txtroomno.Text);
+            room.Price = Convert.ToInt32(txtprice.Text);
             if (rbnsharing.Checked)
                 room.Roomtype = rbnsharing.Text;
             else if (rbnsingle.Checked)
@@ -85,11 +86,7 @@ namespace WindowsFormsApplication6
                 room.Roomtype = rbndelux.Text;
             else
                 room.Roomtype = rbnsuite.Text;
-            room.Status = txtstatus.Text;
-            room.Startdate = txtstartdate.Text;
-            room.Enddate = txtenddate.Text;
-            room.Roomno = Convert.ToInt32(txtroomno.Text);
-            room.Price = Convert.ToInt32(txtprice.Text);
+          
             return room;
         }
         private void btndelete_Click(object sender, EventArgs e)
