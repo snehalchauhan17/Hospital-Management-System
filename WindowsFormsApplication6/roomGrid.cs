@@ -30,5 +30,10 @@ namespace WindowsFormsApplication6
             f.Show();
             this.Hide();
         }
+
+        private void roomGrid_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -52,15 +52,16 @@
             this.btnback.UseVisualStyleBackColor = true;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
-            // roomInfo
+            // roomGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 375);
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "roomInfo";
+            this.Name = "roomGrid";
             this.Text = "roomInfo";
+            this.Load += new System.EventHandler(this.roomGrid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

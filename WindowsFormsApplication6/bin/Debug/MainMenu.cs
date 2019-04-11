@@ -61,11 +61,17 @@ namespace WindowsFormsApplication6
               this.Hide();
           }
 
-          private void btnclose_Click(object sender, EventArgs e)
+          
+
+          private void button4_Click(object sender, EventArgs e)
           {
-              Close();
+              billGrid bi = new billGrid();
+              bi.Show();
           }
 
-       
+          private void btnclose_Click(object sender, EventArgs e)
+          {
+              this.Close();
+          }
     }
 }

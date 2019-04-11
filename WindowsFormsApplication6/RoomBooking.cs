@@ -45,7 +45,7 @@ namespace WindowsFormsApplication6
 
 
             txtroomno.Text = Convert.ToString(r.Roomno);
-            txtstatus.Text = r.Status;
+            txtstatus.Text = Convert.ToString(r.Status;
             txtstartdate.Text = Convert.ToString(r.Startdate);
             txtenddate.Text = Convert.ToString(r.Enddate);
             txtprice.Text = Convert.ToString(r.Price);

@@ -37,5 +37,10 @@ namespace WindowsFormsApplication6
         {
 
         }
+
+        private void PatientGrid_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

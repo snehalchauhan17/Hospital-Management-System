@@ -148,7 +148,7 @@ namespace WindowsFormsApplication6
             {
                 connection.Open(); 
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@pid", room.pid);
+                command.Parameters.AddWithValue("@PID", room.pid);
                 command.Parameters.AddWithValue("@Roomtype", room.Roomtype);
                 command.Parameters.AddWithValue("@Status", room.Status);
                 command.Parameters.AddWithValue("@Startdate", room.Startdate);
@@ -170,8 +170,8 @@ namespace WindowsFormsApplication6
                 command.Dispose();
                 connection.Close();
             }
-        //BillPayment
-            public static DataTable getBills()
+
+            public static  DataTable getBills()
             {
                 connection.Open();
                 SqlDataAdapter sqa = new SqlDataAdapter("select * from BillPayment", connection);
@@ -181,31 +181,7 @@ namespace WindowsFormsApplication6
                 return dbt;
 
             }
-            public static Bill getBill(int pid)
-            {
-                Bill b = new Bill();
-                SqlCommand command;
-                SqlDataReader dataReader;
-                string query = "select * from BillPayment where pid=" + pid;
-                connection.Open();
-                command = new SqlCommand(query, connection);
-                dataReader = command.ExecuteReader();
-                while (dataReader.Read())
-                {
-                    b.pid = pid;
-                    b.RoomRent = (int)dataReader["RoomRent"];
-                    b.medicineCharges = (int)dataReader["medicineCharges"];
-                    b.doctorCharges = (int)dataReader["doctorCharges"];
-                    b.reportCharges = (int)dataReader["reportCharges"];
-                    b.otherCharges = (int)dataReader["otherCharges"];
-                    b.total = (int)dataReader["total"];
-                }
-                dataReader.Close();
-                command.Dispose();
-                connection.Close();
-                return b;
-
-            }
+    
             public static void addBill(Bill bill)
             {
                 // insert patient to database patient info table. 

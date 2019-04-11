@@ -1,4 +1,4 @@
-﻿namespace hms
+﻿namespace WindowsFormsApplication6
 {
     partial class billGrid
     {
@@ -62,6 +62,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "billGrid";
             this.Text = "billGrid";
+            this.Load += new System.EventHandler(this.billGrid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

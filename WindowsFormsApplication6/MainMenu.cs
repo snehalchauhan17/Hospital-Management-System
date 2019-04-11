@@ -61,10 +61,7 @@ namespace WindowsFormsApplication6
               this.Hide();
           }
 
-          private void btnclose_Click(object sender, EventArgs e)
-          {
-              Close();
-          }
+          
 
           private void button4_Click(object sender, EventArgs e)
           {
@@ -72,6 +69,9 @@ namespace WindowsFormsApplication6
               bi.Show();
           }
 
-       
+          private void btnclose_Click(object sender, EventArgs e)
+          {
+              this.Close();
+          }
     }
 }
