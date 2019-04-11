@@ -7,7 +7,7 @@
     <ProjectGuid>{1EFC452F-956B-4A20-ABF0-73143C4C419F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>hms</RootNamespace>
+    <RootNamespace>WindowsFormsApplication6</RootNamespace>
     <AssemblyName>Hospital Management System</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -128,6 +128,7 @@
     <Compile Include="Bill Payment.Designer.cs">
       <DependentUpon>Bill Payment.cs</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
     <EmbeddedResource Include="billGrid.resx">
       <DependentUpon>billGrid.cs</DependentUpon>
     </EmbeddedResource>

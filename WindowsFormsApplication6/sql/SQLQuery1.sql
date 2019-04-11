@@ -33,3 +33,12 @@ CREATE TABLE [dbo].[BillPayment] (
     [total]           INT NOT NULL,
     PRIMARY KEY CLUSTERED ([PID] ASC)
 );
+
+
+CREATE TABLE [dbo].[Login]
+(
+	[userid] VARCHAR(50) NOT NULL PRIMARY KEY, 
+    [password] VARCHAR(50) NOT NULL, 
+    [firstname] VARCHAR(50) NOT NULL, 
+    [lastname] VARCHAR(50) NOT NULL
+)

@@ -32,6 +32,7 @@ namespace WindowsFormsApplication6
                 PatientInformation pi = new PatientInformation();
                 SqlCommand command;
                 SqlDataReader dataReader;
+
                 string query="select * from patientInfo where pid=" + pid;
                 connection.Open(); 
                 command = new SqlCommand(query, connection);
@@ -52,6 +53,32 @@ namespace WindowsFormsApplication6
                 return pi;
         
             }
+
+
+            public static User getUser(string uid)
+                {
+                User user = new User();
+                SqlCommand command;
+                SqlDataReader dataReader;
+                string query = "select * from Login where userid=@userid";
+                connection.Open();
+                command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@userid", uid);
+                dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                    {
+                    user.userId = uid;
+                    
+                    user.password = (string)dataReader["password"];
+                    user.firstName = (string)dataReader["firstname"];
+                    user.lastName = (string)dataReader["lastname"];
+                    }
+                dataReader.Close();
+                command.Dispose();
+                connection.Close();
+                return user;
+
+                }
 
 
             public static void addPatient(PatientInformation patient)
