@@ -22,7 +22,7 @@ namespace WindowsFormsApplication6
             
             User u = DatabaseHelper.getUser(txtusername.Text);
 
-            if (txtpassword.Text == u.password)
+            if (String.Compare(txtpassword.Text , u.password) == 0)
             {
                 MainMenu m = new MainMenu();
                 m.Show();
@@ -37,6 +37,16 @@ namespace WindowsFormsApplication6
         private void btnexit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
 
     }

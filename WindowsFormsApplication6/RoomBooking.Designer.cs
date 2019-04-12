@@ -39,10 +39,8 @@
             this.rbndelux = new System.Windows.Forms.RadioButton();
             this.rbnsingle = new System.Windows.Forms.RadioButton();
             this.rbnsuite = new System.Windows.Forms.RadioButton();
-            this.txtenddate = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtprice = new System.Windows.Forms.TextBox();
-            this.txtstartdate = new System.Windows.Forms.TextBox();
             this.txtroomno = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtpid = new System.Windows.Forms.TextBox();
@@ -51,6 +49,11 @@
             this.btnsubmit = new System.Windows.Forms.Button();
             this.btnback = new System.Windows.Forms.Button();
             this.btnfetch = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +72,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 104);
+            this.label3.Location = new System.Drawing.Point(12, 152);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 19;
@@ -78,7 +81,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 58);
+            this.label4.Location = new System.Drawing.Point(12, 93);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 20;
@@ -96,22 +99,25 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.AliceBlue;
+            this.groupBox2.Controls.Add(this.radioButton2);
+            this.groupBox2.Controls.Add(this.radioButton1);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.dateTimePicker2);
+            this.groupBox2.Controls.Add(this.dateTimePicker1);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.rbnsharing);
             this.groupBox2.Controls.Add(this.rbndelux);
             this.groupBox2.Controls.Add(this.rbnsingle);
             this.groupBox2.Controls.Add(this.rbnsuite);
-            this.groupBox2.Controls.Add(this.txtenddate);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.txtprice);
-            this.groupBox2.Controls.Add(this.txtstartdate);
             this.groupBox2.Controls.Add(this.txtroomno);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Location = new System.Drawing.Point(50, 140);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(362, 243);
+            this.groupBox2.Size = new System.Drawing.Size(362, 260);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Room Info";
@@ -119,7 +125,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 142);
+            this.label8.Location = new System.Drawing.Point(12, 191);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(62, 13);
             this.label8.TabIndex = 29;
@@ -128,7 +134,7 @@
             // rbnsharing
             // 
             this.rbnsharing.AutoSize = true;
-            this.rbnsharing.Location = new System.Drawing.Point(148, 142);
+            this.rbnsharing.Location = new System.Drawing.Point(148, 187);
             this.rbnsharing.Name = "rbnsharing";
             this.rbnsharing.Size = new System.Drawing.Size(61, 17);
             this.rbnsharing.TabIndex = 13;
@@ -139,7 +145,7 @@
             // rbndelux
             // 
             this.rbndelux.AutoSize = true;
-            this.rbndelux.Location = new System.Drawing.Point(231, 142);
+            this.rbndelux.Location = new System.Drawing.Point(231, 187);
             this.rbndelux.Name = "rbndelux";
             this.rbndelux.Size = new System.Drawing.Size(52, 17);
             this.rbndelux.TabIndex = 14;
@@ -150,7 +156,7 @@
             // rbnsingle
             // 
             this.rbnsingle.AutoSize = true;
-            this.rbnsingle.Location = new System.Drawing.Point(148, 178);
+            this.rbnsingle.Location = new System.Drawing.Point(148, 219);
             this.rbnsingle.Name = "rbnsingle";
             this.rbnsingle.Size = new System.Drawing.Size(54, 17);
             this.rbnsingle.TabIndex = 15;
@@ -161,7 +167,7 @@
             // rbnsuite
             // 
             this.rbnsuite.AutoSize = true;
-            this.rbnsuite.Location = new System.Drawing.Point(234, 178);
+            this.rbnsuite.Location = new System.Drawing.Point(234, 219);
             this.rbnsuite.Name = "rbnsuite";
             this.rbnsuite.Size = new System.Drawing.Size(49, 17);
             this.rbnsuite.TabIndex = 16;
@@ -169,17 +175,10 @@
             this.rbnsuite.Text = "Suite";
             this.rbnsuite.UseVisualStyleBackColor = true;
             // 
-            // txtenddate
-            // 
-            this.txtenddate.Location = new System.Drawing.Point(148, 78);
-            this.txtenddate.Name = "txtenddate";
-            this.txtenddate.Size = new System.Drawing.Size(135, 20);
-            this.txtenddate.TabIndex = 28;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 81);
+            this.label7.Location = new System.Drawing.Point(12, 126);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 27;
@@ -187,23 +186,16 @@
             // 
             // txtprice
             // 
-            this.txtprice.Location = new System.Drawing.Point(148, 104);
+            this.txtprice.Location = new System.Drawing.Point(148, 149);
             this.txtprice.Name = "txtprice";
-            this.txtprice.Size = new System.Drawing.Size(135, 20);
+            this.txtprice.Size = new System.Drawing.Size(147, 20);
             this.txtprice.TabIndex = 26;
-            // 
-            // txtstartdate
-            // 
-            this.txtstartdate.Location = new System.Drawing.Point(148, 55);
-            this.txtstartdate.Name = "txtstartdate";
-            this.txtstartdate.Size = new System.Drawing.Size(135, 20);
-            this.txtstartdate.TabIndex = 25;
             // 
             // txtroomno
             // 
             this.txtroomno.Location = new System.Drawing.Point(148, 31);
             this.txtroomno.Name = "txtroomno";
-            this.txtroomno.Size = new System.Drawing.Size(135, 20);
+            this.txtroomno.Size = new System.Drawing.Size(147, 20);
             this.txtroomno.TabIndex = 23;
             // 
             // label2
@@ -277,6 +269,52 @@
             this.btnfetch.UseVisualStyleBackColor = false;
             this.btnfetch.Click += new System.EventHandler(this.btnfetch_Click);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(148, 87);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(147, 20);
+            this.dateTimePicker1.TabIndex = 30;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(148, 120);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(147, 20);
+            this.dateTimePicker2.TabIndex = 31;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 62);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 13);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "Status";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(148, 60);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(59, 17);
+            this.radioButton1.TabIndex = 33;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Vacant";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(234, 60);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(71, 17);
+            this.radioButton2.TabIndex = 34;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Occupied";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
             // RoomBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,7 +349,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtprice;
-        private System.Windows.Forms.TextBox txtstartdate;
         private System.Windows.Forms.TextBox txtroomno;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtpid;
@@ -325,7 +362,11 @@
         private System.Windows.Forms.RadioButton rbndelux;
         private System.Windows.Forms.RadioButton rbnsingle;
         private System.Windows.Forms.RadioButton rbnsuite;
-        private System.Windows.Forms.TextBox txtenddate;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

@@ -110,6 +110,7 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "LoginForm";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // LoginForm
             // 
@@ -121,6 +122,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "LoginForm";
             this.Text = "LoginForm";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

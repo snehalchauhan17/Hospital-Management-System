@@ -42,12 +42,17 @@ namespace WindowsFormsApplication6
                     rbnsuite.Checked = true;
                     break;
             }
-
-
+            switch (r.Status)
+            {
+                case "Vacant":
+                    radioButton1.Checked = true;
+                    break;
+                case "Occupied":
+                    radioButton2.Checked = true;
+                    break;
+            }
             txtroomno.Text = Convert.ToString(r.Roomno);
-          
-            txtstartdate.Text = Convert.ToString(r.Startdate);
-            txtenddate.Text = Convert.ToString(r.Enddate);
+
             txtprice.Text = Convert.ToString(r.Price);
 
 
@@ -74,10 +79,12 @@ namespace WindowsFormsApplication6
         {
             roomInformation room = new roomInformation();
             room.pid = Convert.ToInt32(txtpid.Text);
-            room.Startdate = txtstartdate.Text;
-            room.Enddate = txtenddate.Text;
+          
             room.Roomno = Convert.ToInt32(txtroomno.Text);
             room.Price = Convert.ToInt32(txtprice.Text);
+            room.Startdate = dateTimePicker1.Text;
+            room.Enddate = dateTimePicker1.Text;
+
             if (rbnsharing.Checked)
                 room.Roomtype = rbnsharing.Text;
             else if (rbnsingle.Checked)
@@ -86,7 +93,11 @@ namespace WindowsFormsApplication6
                 room.Roomtype = rbndelux.Text;
             else
                 room.Roomtype = rbnsuite.Text;
-          
+
+            if (radioButton1.Checked)
+                room.Status = radioButton1.Text;
+            else
+                room.Status = radioButton2.Text;
             return room;
         }
         private void btndelete_Click(object sender, EventArgs e)
@@ -100,6 +111,11 @@ namespace WindowsFormsApplication6
             MainMenu f = new MainMenu();
             f.Show();
             this.Hide();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
 
     }

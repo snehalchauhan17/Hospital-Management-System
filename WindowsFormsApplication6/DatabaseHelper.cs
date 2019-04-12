@@ -10,9 +10,9 @@ namespace WindowsFormsApplication6
     class DatabaseHelper
     {
         // vipul
-        public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=F:\VipulDev\workspaces\net\Hospital-Management-System\WindowsFormsApplication6\db\hms.mdf;Integrated Security=True;Connect Timeout=30";
+      //  public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=F:\VipulDev\workspaces\net\Hospital-Management-System\WindowsFormsApplication6\db\hms.mdf;Integrated Security=True;Connect Timeout=30";
         // snehal
-        // public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Vipul-Home\Documents\Visual Studio 2013\Projects\Hospital Management System\Hospital-Management-System\WindowsFormsApplication6\hms.mdf;Integrated Security=True;Connect Timeout=30;Integrated Security=True;Connect Timeout=30";
+        public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Vipul-Home\Documents\Visual Studio 2013\Projects\Hospital Management System\Hospital-Management-System\WindowsFormsApplication6\db\hms.mdf;Integrated Security=True;Connect Timeout=30";
         // clg
         // public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=F:\VipulDev\workspaces\net\Hospital-Management-System\WindowsFormsApplication6\hms.mdf;Integrated Security=True;Connect Timeout=30";
         
@@ -147,11 +147,12 @@ namespace WindowsFormsApplication6
                 {
                     r.pid = pid;
                     r.Roomtype = (string)dataReader["roomtype"];
-              
-                    r.Startdate = (string)dataReader["Startdate"];
-                    r.Enddate = (string)dataReader["Enddate"];
+
+                    r.Status = (string)dataReader["status"];
                     r.Roomno = (int)dataReader["Roomno"];
                     r.Price = (int)dataReader["Price"];
+                    r.Startdate = (string)dataReader["Startdate"];
+                    r.Enddate = (string)dataReader["Enddate"];
                 }
                 dataReader.Close();
                 command.Dispose();
@@ -162,12 +163,12 @@ namespace WindowsFormsApplication6
             public static void addRoom(roomInformation room)
             {
                 // insert patient to database patient info table. 
-            string query = "insert into roombooking values(@PID,@Roomtype,@startDate,@endDate,@Roomno,@Price)";
+            string query = "insert into roombooking values(@PID,@Roomtype,@Status,@Startdate,@Enddate,@Roomno,@Price)";
                 modifyRoom(room, query);
             }
             public static void updateRoom(roomInformation room)
             {
-            string query = "update roombooking set Roomtype=@Roomtype,Startdate=@startDate,Enddate=@endDate,Roomno=@Roomno,Price=@Price where pid=@PID";
+                string query = "update roombooking set Roomtype=@Roomtype,@Status=status,Startdate=@Startdate,Enddate=@Enddate,Roomno=@Roomno,Price=@Price where pid=@PID";
                 modifyRoom(room, query);
 
             }
@@ -176,12 +177,16 @@ namespace WindowsFormsApplication6
                 connection.Open(); 
                 SqlCommand command = new SqlCommand(query, connection);
                 Console.WriteLine("QUERY:= " + query);
+                command.Parameters.Add("@Status", System.Data.SqlDbType.Text);
+                command.Parameters.Add("@Startdate", System.Data.SqlDbType.Text);
+                command.Parameters.Add("@Enddate", System.Data.SqlDbType.Text);
                 command.Parameters.AddWithValue("@PID", room.pid);
                 command.Parameters.AddWithValue("@Roomno", room.Roomno);
+                command.Parameters.AddWithValue("@Status", room.Status);
                 command.Parameters.AddWithValue("@Price", room.Price);
                 command.Parameters.AddWithValue("@Roomtype", room.Roomtype);
-                command.Parameters.AddWithValue("@startDate", room.Startdate);
-                command.Parameters.AddWithValue("@endDate", room.Enddate);
+                command.Parameters.AddWithValue("@Startdate", room.Startdate);
+                command.Parameters.AddWithValue("@Enddate", room.Enddate);
                 command.ExecuteNonQuery();
                 command.Dispose();
                 connection.Close();

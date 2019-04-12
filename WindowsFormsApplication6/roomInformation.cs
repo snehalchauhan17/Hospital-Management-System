@@ -9,10 +9,11 @@ namespace WindowsFormsApplication6
     class roomInformation
     {
         public int pid;
-        public string Roomtype;        
-        public string Startdate;
-        public string Enddate;
+        public string Roomtype;
+        public string Status;
         public int Roomno;
         public int Price;
+        public string Startdate;
+        public string Enddate;
     }
 }
