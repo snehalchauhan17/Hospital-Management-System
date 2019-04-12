@@ -19,9 +19,10 @@ namespace WindowsFormsApplication6
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            string a = "snehal";
-            string b = "snehal1699";
-            if (txtusername.Text == a && txtpassword.Text == b)
+            
+            User u = DatabaseHelper.getUser(txtusername.Text);
+
+            if (txtpassword.Text == u.password)
             {
                 MainMenu m = new MainMenu();
                 m.Show();

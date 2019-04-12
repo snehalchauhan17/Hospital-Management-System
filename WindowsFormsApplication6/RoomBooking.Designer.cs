@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -44,7 +43,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtprice = new System.Windows.Forms.TextBox();
             this.txtstartdate = new System.Windows.Forms.TextBox();
-            this.txtstatus = new System.Windows.Forms.TextBox();
             this.txtroomno = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtpid = new System.Windows.Forms.TextBox();
@@ -71,7 +69,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 130);
+            this.label3.Location = new System.Drawing.Point(12, 104);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 19;
@@ -80,20 +78,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 84);
+            this.label4.Location = new System.Drawing.Point(12, 58);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 20;
             this.label4.Text = "Start Date";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 58);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 13);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Status";
             // 
             // label6
             // 
@@ -116,12 +105,10 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.txtprice);
             this.groupBox2.Controls.Add(this.txtstartdate);
-            this.groupBox2.Controls.Add(this.txtstatus);
             this.groupBox2.Controls.Add(this.txtroomno);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(50, 140);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(362, 243);
@@ -132,7 +119,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 168);
+            this.label8.Location = new System.Drawing.Point(12, 142);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(62, 13);
             this.label8.TabIndex = 29;
@@ -141,7 +128,7 @@
             // rbnsharing
             // 
             this.rbnsharing.AutoSize = true;
-            this.rbnsharing.Location = new System.Drawing.Point(148, 168);
+            this.rbnsharing.Location = new System.Drawing.Point(148, 142);
             this.rbnsharing.Name = "rbnsharing";
             this.rbnsharing.Size = new System.Drawing.Size(61, 17);
             this.rbnsharing.TabIndex = 13;
@@ -152,7 +139,7 @@
             // rbndelux
             // 
             this.rbndelux.AutoSize = true;
-            this.rbndelux.Location = new System.Drawing.Point(231, 168);
+            this.rbndelux.Location = new System.Drawing.Point(231, 142);
             this.rbndelux.Name = "rbndelux";
             this.rbndelux.Size = new System.Drawing.Size(52, 17);
             this.rbndelux.TabIndex = 14;
@@ -163,7 +150,7 @@
             // rbnsingle
             // 
             this.rbnsingle.AutoSize = true;
-            this.rbnsingle.Location = new System.Drawing.Point(148, 204);
+            this.rbnsingle.Location = new System.Drawing.Point(148, 178);
             this.rbnsingle.Name = "rbnsingle";
             this.rbnsingle.Size = new System.Drawing.Size(54, 17);
             this.rbnsingle.TabIndex = 15;
@@ -174,7 +161,7 @@
             // rbnsuite
             // 
             this.rbnsuite.AutoSize = true;
-            this.rbnsuite.Location = new System.Drawing.Point(234, 204);
+            this.rbnsuite.Location = new System.Drawing.Point(234, 178);
             this.rbnsuite.Name = "rbnsuite";
             this.rbnsuite.Size = new System.Drawing.Size(49, 17);
             this.rbnsuite.TabIndex = 16;
@@ -184,7 +171,7 @@
             // 
             // txtenddate
             // 
-            this.txtenddate.Location = new System.Drawing.Point(148, 104);
+            this.txtenddate.Location = new System.Drawing.Point(148, 78);
             this.txtenddate.Name = "txtenddate";
             this.txtenddate.Size = new System.Drawing.Size(135, 20);
             this.txtenddate.TabIndex = 28;
@@ -192,7 +179,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 107);
+            this.label7.Location = new System.Drawing.Point(12, 81);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 27;
@@ -200,24 +187,17 @@
             // 
             // txtprice
             // 
-            this.txtprice.Location = new System.Drawing.Point(148, 130);
+            this.txtprice.Location = new System.Drawing.Point(148, 104);
             this.txtprice.Name = "txtprice";
             this.txtprice.Size = new System.Drawing.Size(135, 20);
             this.txtprice.TabIndex = 26;
             // 
             // txtstartdate
             // 
-            this.txtstartdate.Location = new System.Drawing.Point(148, 81);
+            this.txtstartdate.Location = new System.Drawing.Point(148, 55);
             this.txtstartdate.Name = "txtstartdate";
             this.txtstartdate.Size = new System.Drawing.Size(135, 20);
             this.txtstartdate.TabIndex = 25;
-            // 
-            // txtstatus
-            // 
-            this.txtstatus.Location = new System.Drawing.Point(148, 55);
-            this.txtstatus.Name = "txtstatus";
-            this.txtstatus.Size = new System.Drawing.Size(135, 20);
-            this.txtstatus.TabIndex = 24;
             // 
             // txtroomno
             // 
@@ -328,12 +308,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtprice;
         private System.Windows.Forms.TextBox txtstartdate;
-        private System.Windows.Forms.TextBox txtstatus;
         private System.Windows.Forms.TextBox txtroomno;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtpid;
