@@ -72,6 +72,7 @@ namespace WindowsFormsApplication6
           private void btnclose_Click(object sender, EventArgs e)
           {
               this.Close();
+              Application.Exit();
           }
     }
 }

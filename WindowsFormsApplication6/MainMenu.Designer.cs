@@ -34,7 +34,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnclose = new System.Windows.Forms.Button();
-            this.btnlogout = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -91,24 +90,13 @@
             // 
             this.btnclose.BackColor = System.Drawing.Color.Lavender;
             this.btnclose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnclose.Location = new System.Drawing.Point(336, 412);
+            this.btnclose.Location = new System.Drawing.Point(254, 415);
             this.btnclose.Name = "btnclose";
             this.btnclose.Size = new System.Drawing.Size(75, 32);
             this.btnclose.TabIndex = 7;
-            this.btnclose.Text = "Close";
+            this.btnclose.Text = "Log out";
             this.btnclose.UseVisualStyleBackColor = false;
             this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
-            // 
-            // btnlogout
-            // 
-            this.btnlogout.BackColor = System.Drawing.Color.Lavender;
-            this.btnlogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlogout.Location = new System.Drawing.Point(172, 412);
-            this.btnlogout.Name = "btnlogout";
-            this.btnlogout.Size = new System.Drawing.Size(75, 32);
-            this.btnlogout.TabIndex = 8;
-            this.btnlogout.Text = "Log out";
-            this.btnlogout.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -156,7 +144,6 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnlogout);
             this.Controls.Add(this.btnclose);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button5);
@@ -177,7 +164,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnclose;
-        private System.Windows.Forms.Button btnlogout;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
