@@ -177,9 +177,6 @@ namespace WindowsFormsApplication6
                 connection.Open(); 
                 SqlCommand command = new SqlCommand(query, connection);
                 Console.WriteLine("QUERY:= " + query);
-                command.Parameters.Add("@Status", System.Data.SqlDbType.Text);
-                command.Parameters.Add("@Startdate", System.Data.SqlDbType.Text);
-                command.Parameters.Add("@Enddate", System.Data.SqlDbType.Text);
                 command.Parameters.AddWithValue("@PID", room.pid);
                 command.Parameters.AddWithValue("@Roomno", room.Roomno);
                 command.Parameters.AddWithValue("@Status", room.Status);
