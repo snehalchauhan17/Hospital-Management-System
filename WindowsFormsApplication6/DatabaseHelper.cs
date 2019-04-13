@@ -10,9 +10,9 @@ namespace WindowsFormsApplication6
     class DatabaseHelper
     {
         // vipul
-      //  public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=F:\VipulDev\workspaces\net\Hospital-Management-System\WindowsFormsApplication6\db\hms.mdf;Integrated Security=True;Connect Timeout=30";
+        public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=F:\VipulDev\workspaces\net\Hospital-Management-System\WindowsFormsApplication6\db\hms.mdf;Integrated Security=True;Connect Timeout=30";
         // snehal
-        public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Vipul-Home\Documents\Visual Studio 2013\Projects\Hospital Management System\Hospital-Management-System\WindowsFormsApplication6\db\hms.mdf;Integrated Security=True;Connect Timeout=30";
+        // public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Vipul-Home\Documents\Visual Studio 2013\Projects\Hospital Management System\Hospital-Management-System\WindowsFormsApplication6\db\hms.mdf;Integrated Security=True;Connect Timeout=30";
         // clg
         // public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=F:\VipulDev\workspaces\net\Hospital-Management-System\WindowsFormsApplication6\hms.mdf;Integrated Security=True;Connect Timeout=30";
         
@@ -33,9 +33,10 @@ namespace WindowsFormsApplication6
                 SqlCommand command;
                 SqlDataReader dataReader;
 
-                string query="select * from patientInfo where pid=" + pid;
+                string query="select * from patientInfo where pid=@pid";
                 connection.Open(); 
                 command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@pid", pid);
                 dataReader = command.ExecuteReader();
                 while(dataReader.Read())
                 {
@@ -139,15 +140,15 @@ namespace WindowsFormsApplication6
                 roomInformation r = new roomInformation();
                 SqlCommand command;
                 SqlDataReader dataReader;
-                string query = "select * from roombooking where pid=" + pid;
+                string query = "select * from roombooking where pid=@pid";
                 connection.Open(); 
                 command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@pid", pid);
                 dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
                     r.pid = pid;
                     r.Roomtype = (string)dataReader["roomtype"];
-
                     r.Status = (string)dataReader["status"];
                     r.Roomno = (int)dataReader["Roomno"];
                     r.Price = (int)dataReader["Price"];
@@ -163,27 +164,37 @@ namespace WindowsFormsApplication6
             public static void addRoom(roomInformation room)
             {
                 // insert patient to database patient info table. 
-            string query = "insert into roombooking values(@PID,@Roomtype,@Status,@Startdate,@Enddate,@Roomno,@Price)";
-                modifyRoom(room, query);
+            string query2 = "insert into roombooking values(@PID,@Roomtype,@Roomno,@Price,@Startdate,@Enddate,@Status)";
+                modifyRoom(room, query2);
             }
             public static void updateRoom(roomInformation room)
             {
-                string query = "update roombooking set Roomtype=@Roomtype,@Status=status,Startdate=@Startdate,Enddate=@Enddate,Roomno=@Roomno,Price=@Price where pid=@PID";
-                modifyRoom(room, query);
+                string query2 = "update roombooking set Roomtype=@Roomtype,@Status=status,Startdate=@Startdate,Enddate=@Enddate,Roomno=@Roomno,Price=@Price where pid=@PID";
+                modifyRoom(room, query2);
 
             }
-            private static void modifyRoom(roomInformation room, string query)
+            private static void modifyRoom(roomInformation room, string query2)
             {
                 connection.Open(); 
+<<<<<<< HEAD
                 SqlCommand command = new SqlCommand(query, connection);
                 Console.WriteLine("QUERY:= " + query);
+=======
+                SqlCommand command = new SqlCommand(query2, connection);
+                Console.WriteLine("QUERY:= " + query2);
+                //command.Parameters.Add("@Status", System.Data.SqlDbType.Text);
+                //command.Parameters.Add("@Startdate", System.Data.SqlDbType.Text);
+                //command.Parameters.Add("@Enddate", System.Data.SqlDbType.Text);
+                
+>>>>>>> e07570d2f080bb86ea00710ee71c7514de661351
                 command.Parameters.AddWithValue("@PID", room.pid);
-                command.Parameters.AddWithValue("@Roomno", room.Roomno);
-                command.Parameters.AddWithValue("@Status", room.Status);
-                command.Parameters.AddWithValue("@Price", room.Price);
                 command.Parameters.AddWithValue("@Roomtype", room.Roomtype);
+                command.Parameters.AddWithValue("@Roomno", room.Roomno);
+                command.Parameters.AddWithValue("@Price", room.Price);
                 command.Parameters.AddWithValue("@Startdate", room.Startdate);
                 command.Parameters.AddWithValue("@Enddate", room.Enddate);
+                command.Parameters.AddWithValue("@Status", room.Status);    
+                
                 command.ExecuteNonQuery();
                 command.Dispose();
                 connection.Close();
