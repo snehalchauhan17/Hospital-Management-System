@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.txtpid = new System.Windows.Forms.TextBox();
             this.lbldate = new System.Windows.Forms.Label();
             this.lblpid = new System.Windows.Forms.Label();
@@ -297,7 +296,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::WindowsFormsApplication6.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(629, 508);
             this.Controls.Add(this.btndelete);
@@ -307,6 +306,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.DoubleBuffered = true;
             this.Name = "Form3";
             this.Text = "PatientReg";
             this.Load += new System.EventHandler(this.Form3_Load);

@@ -101,6 +101,11 @@
       <DependentUpon>MainMenu.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RoomBooking.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +156,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="roomGrid.resx">
       <DependentUpon>roomGrid.cs</DependentUpon>
@@ -193,10 +199,7 @@
     <Folder Include="db\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\hospital .png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\hospital 1.png" />
+    <None Include="Resources\bg.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
