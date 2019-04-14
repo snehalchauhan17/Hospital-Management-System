@@ -83,7 +83,7 @@ namespace WindowsFormsApplication6
             room.Roomno = Convert.ToInt32(txtroomno.Text);
             room.Price = Convert.ToInt32(txtprice.Text);
             room.Startdate = dateTimePicker1.Text;
-            room.Enddate = dateTimePicker1.Text;
+            room.Enddate = dateTimePicker2.Text;
 
             if (rbnsharing.Checked)
                 room.Roomtype = rbnsharing.Text;
@@ -100,11 +100,7 @@ namespace WindowsFormsApplication6
                 room.Status = radioButton2.Text;
             return room;
         }
-        private void btndelete_Click(object sender, EventArgs e)
-        {
-            DatabaseHelper.deleteRoom(Convert.ToInt32(txtpid.Text));
-            MessageBox.Show("Patient deleted successfully");
-        }
+   
 
         private void btnback_Click(object sender, EventArgs e)
         {
@@ -116,6 +112,12 @@ namespace WindowsFormsApplication6
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btndelete_Click_1(object sender, EventArgs e)
+        {
+            DatabaseHelper.deleteRoom(Convert.ToInt32(txtpid.Text));
+            MessageBox.Show("Patient deleted successfully");
         }
 
     }

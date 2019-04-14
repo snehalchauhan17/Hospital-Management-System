@@ -79,6 +79,7 @@ namespace WindowsFormsApplication6
             bill.medicineCharges = Convert.ToInt32(textmdcn.Text);
             bill.doctorCharges = Convert.ToInt32(textdoctor.Text);
             bill.otherCharges = Convert.ToInt32(textOther.Text);
+            bill.total = Convert.ToInt32(txttotal.Text);
             return bill;
         }
 

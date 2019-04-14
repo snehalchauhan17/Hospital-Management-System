@@ -111,6 +111,7 @@
             this.btndelete.TabIndex = 30;
             this.btndelete.Text = "Delete";
             this.btndelete.UseVisualStyleBackColor = false;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click_1);
             // 
             // btnsubmit
             // 
@@ -357,6 +358,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Name = "RoomBooking";
             this.Text = "RoomInfo";
             this.Load += new System.EventHandler(this.RoomBooking_Load);

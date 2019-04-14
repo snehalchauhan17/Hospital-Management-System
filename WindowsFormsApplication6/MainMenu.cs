@@ -38,6 +38,7 @@ namespace WindowsFormsApplication6
             //Patient_info_list p = new Patient_info_list();
             PatientGrid p = new PatientGrid();
             p.Show();
+            this.Hide();
         }
         
 
@@ -52,6 +53,7 @@ namespace WindowsFormsApplication6
           {
               roomGrid ro = new roomGrid();
               ro.Show();
+              this.Hide();
           }
 
           private void button5_Click(object sender, EventArgs e)
@@ -67,6 +69,7 @@ namespace WindowsFormsApplication6
           {
               billGrid bi = new billGrid();
               bi.Show();
+              this.Hide();
           }
 
           private void btnclose_Click(object sender, EventArgs e)

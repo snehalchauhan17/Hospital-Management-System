@@ -176,17 +176,10 @@ namespace WindowsFormsApplication6
             private static void modifyRoom(roomInformation room, string query2)
             {
                 connection.Open(); 
-//<<<<<<< HEAD
+
                 SqlCommand command = new SqlCommand(query2, connection);
                 Console.WriteLine("QUERY:= " + query2);
-//=======
-            //    SqlCommand command = new SqlCommand(query2, connection);
-               // Console.WriteLine("QUERY:= " + query2);
-                //command.Parameters.Add("@Status", System.Data.SqlDbType.Text);
-                //command.Parameters.Add("@Startdate", System.Data.SqlDbType.Text);
-                //command.Parameters.Add("@Enddate", System.Data.SqlDbType.Text);
-                
-//>>>>>>> e07570d2f080bb86ea00710ee71c7514de661351
+
                 command.Parameters.AddWithValue("@PID", room.pid);
                 command.Parameters.AddWithValue("@Roomtype", room.Roomtype);
                 command.Parameters.AddWithValue("@Roomno", room.Roomno);
