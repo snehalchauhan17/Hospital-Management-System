@@ -3,29 +3,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
 using System.Data;
+//using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
+
 namespace WindowsFormsApplication6
-    {
+   {
     class DatabaseHelper
         {
-        // vipul
-        public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=F:\VipulDev\workspaces\net\Hospital-Management-System\WindowsFormsApplication6\hms.mdf;Integrated Security=True;Connect Timeout=30";
-        // snehal
-       // public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Vipul-Home\Documents\Visual Studio 2013\Projects\Hospital Management System\Hospital-Management-System\WindowsFormsApplication6\db\hms.mdf;Integrated Security=True;Connect Timeout=30";
+     
         // clg
-        // public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=F:\VipulDev\workspaces\net\Hospital-Management-System\WindowsFormsApplication6\hms.mdf;Integrated Security=True;Connect Timeout=30";
-
-        public static SqlConnection connection = new SqlConnection(connetionString);
+       // public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=F:\17012011066\Hospital-Management-System\WindowsFormsApplication6\hms.mdf;Integrated Security=True;Connect Timeout=30";
+        
+        // sql laptop
+        // public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Vipul-Home\Documents\Visual Studio 2013\Projects\Hospital Management System\Hospital-Management-System\WindowsFormsApplication6\hms.mdf;Integrated Security=True;Connect Timeout=30";
+        //public static SqlConnection connection = new SqlConnection(connetionString);
+        
+        //mysql
+        public static string connetionString = @"server=db4free.net;userid=snehalchauhan;password=snehalchauhan;database=snehalhospital";
+        //"Server=db4free.net;Database=snehalhospital;Uid=snehalchauhan;Pwd=snehalchauhan;";
+        public static MySqlConnection connection = new MySqlConnection(connetionString);
 
         public static User getUser(string uid)
-            {
+           {
+            
             User user = new User();
-            SqlCommand command;
-            SqlDataReader dataReader;
+            //SqlCommand command;
+            MySqlCommand command;
+            MySqlDataReader dataReader;
             string query = "select * from Login where userid=@userid";
             connection.Open();
-            command = new SqlCommand(query, connection);
+            command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@userid", uid);
             dataReader = command.ExecuteReader();
             while (dataReader.Read())
@@ -47,7 +55,7 @@ namespace WindowsFormsApplication6
         public static DataTable getPatients()
             {
             connection.Open();
-            SqlDataAdapter sqa = new SqlDataAdapter("select * from patientInfo", connection);
+            MySqlDataAdapter sqa = new MySqlDataAdapter("select * from patientInfo", connection);
             DataTable dbt = new DataTable();
             sqa.Fill(dbt);
             connection.Close();
@@ -56,12 +64,12 @@ namespace WindowsFormsApplication6
         public static PatientInformation getPatient(int pid)
             {
             PatientInformation pi = new PatientInformation();
-            SqlCommand command;
-            SqlDataReader dataReader;
+            MySqlCommand command;
+            MySqlDataReader dataReader;
 
             string query = "select * from patientInfo where pid=@pid";
             connection.Open();
-            command = new SqlCommand(query, connection);
+            command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@pid", pid);
             dataReader = command.ExecuteReader();
             while (dataReader.Read())
@@ -102,7 +110,7 @@ namespace WindowsFormsApplication6
             {
             connection.Open();
             string query = "delete from PatientInfo where pid=@PID";
-            SqlCommand command = new SqlCommand(query, connection);
+            MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@PID", pid);
             command.ExecuteNonQuery();
             command.Dispose();
@@ -112,7 +120,7 @@ namespace WindowsFormsApplication6
         private static void modifyPatient(PatientInformation patient, string query)
             {
             connection.Open();
-            SqlCommand command = new SqlCommand(query, connection);
+            MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@PID", patient.pid);
             command.Parameters.AddWithValue("@Date", patient.date);
             command.Parameters.AddWithValue("@Name", patient.name);
@@ -129,7 +137,7 @@ namespace WindowsFormsApplication6
         public static DataTable getRooms()
             {
             connection.Open();
-            SqlDataAdapter sqa = new SqlDataAdapter("select * from roombooking", connection);
+            MySqlDataAdapter sqa = new MySqlDataAdapter("select * from roombooking", connection);
             DataTable dbt = new DataTable();
             sqa.Fill(dbt);
             connection.Close();
@@ -139,11 +147,11 @@ namespace WindowsFormsApplication6
         public static roomInformation getRoom(int pid)
             {
             roomInformation r = new roomInformation();
-            SqlCommand command;
-            SqlDataReader dataReader;
+            MySqlCommand command;
+            MySqlDataReader dataReader;
             string query = "select * from roombooking where pid=@pid";
             connection.Open();
-            command = new SqlCommand(query, connection);
+            command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@pid", pid);
             dataReader = command.ExecuteReader();
             while (dataReader.Read())
@@ -178,7 +186,7 @@ namespace WindowsFormsApplication6
             {
             connection.Open();
 
-            SqlCommand command = new SqlCommand(query2, connection);
+            MySqlCommand command = new MySqlCommand(query2, connection);
             Console.WriteLine("QUERY:= " + query2);
 
             command.Parameters.AddWithValue("@PID", room.pid);
@@ -198,7 +206,7 @@ namespace WindowsFormsApplication6
             {
             connection.Open();
             string query = "delete from roombooking where pid=@PID";
-            SqlCommand command = new SqlCommand(query, connection);
+            MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@PID", pid);
             command.ExecuteNonQuery();
             command.Dispose();
@@ -208,7 +216,7 @@ namespace WindowsFormsApplication6
         public static DataTable getBills()
             {
             connection.Open();
-            SqlDataAdapter sqa = new SqlDataAdapter("select * from BillPayment", connection);
+            MySqlDataAdapter sqa = new MySqlDataAdapter("select * from BillPayment", connection);
             DataTable dbt = new DataTable();
             sqa.Fill(dbt);
             connection.Close();
@@ -225,7 +233,7 @@ namespace WindowsFormsApplication6
         private static void modifybill(Bill bill, string query)
             {
             connection.Open();
-            SqlCommand command = new SqlCommand(query, connection);
+            MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@PID", bill.pid);
             command.Parameters.AddWithValue("@RoomRent", bill.RoomRent);
             command.Parameters.AddWithValue("@medicineCharges", bill.medicineCharges);

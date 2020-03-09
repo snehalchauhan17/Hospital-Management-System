@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace hms.Properties {
+namespace WindowsFormsApplication6.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
