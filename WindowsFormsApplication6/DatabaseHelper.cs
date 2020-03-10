@@ -11,14 +11,17 @@ namespace WindowsFormsApplication6
    {
     class DatabaseHelper
         {
-     
+        // vipul
+       // public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=F:\VipulDev\workspaces\net\Hospital-Management-System\WindowsFormsApplication6\hms.mdf;Integrated Security=True;Connect Timeout=30";
+        // snehal
+      //  public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Vipul-Home\Documents\Visual Studio 2013\Projects\Hospital Management System\Hospital-Management-System\WindowsFormsApplication6\hms.mdf;Integrated Security=True;Connect Timeout=30";
         // clg
        // public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=F:\17012011066\Hospital-Management-System\WindowsFormsApplication6\hms.mdf;Integrated Security=True;Connect Timeout=30";
-        
+
         // sql laptop
         // public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Vipul-Home\Documents\Visual Studio 2013\Projects\Hospital Management System\Hospital-Management-System\WindowsFormsApplication6\hms.mdf;Integrated Security=True;Connect Timeout=30";
         //public static SqlConnection connection = new SqlConnection(connetionString);
-        
+
         //mysql
         public static string connetionString = @"server=db4free.net;userid=snehalchauhan;password=snehalchauhan;database=snehalhospital";
         //"Server=db4free.net;Database=snehalhospital;Uid=snehalchauhan;Pwd=snehalchauhan;";
@@ -26,7 +29,7 @@ namespace WindowsFormsApplication6
 
         public static User getUser(string uid)
            {
-            
+
             User user = new User();
             //SqlCommand command;
             MySqlCommand command;
@@ -93,7 +96,7 @@ namespace WindowsFormsApplication6
 
         public static void addPatient(PatientInformation patient)
             {
-            // insert patient to database patient info table. 
+            // insert patient to database patient info table.
             string query = "insert into patientInfo values(@PID,@Date,@Name,@Gender,@Age,@Address,@Disease)";
             modifyPatient(patient, query);
             }
@@ -172,7 +175,7 @@ namespace WindowsFormsApplication6
             }
         public static void addRoom(roomInformation room)
             {
-            // insert patient to database patient info table. 
+            // insert patient to database patient info table.
             string query2 = "insert into roombooking values(@PID,@Roomtype,@Roomno,@Price,@Startdate,@Enddate,@Status)";
             modifyRoom(room, query2);
             }
@@ -226,7 +229,7 @@ namespace WindowsFormsApplication6
 
         public static void addBill(Bill bill)
             {
-            // insert patient to database patient info table. 
+            // insert patient to database patient info table.
             string query = "insert into BillPayment values(@PID,@RoomRent,@medicineCharges,@doctorCharges,@reportCharges,@otherCharges,@total)";
             modifybill(bill, query);
             }
