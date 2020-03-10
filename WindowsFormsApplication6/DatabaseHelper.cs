@@ -25,10 +25,10 @@ namespace WindowsFormsApplication6
         //public static SqlConnection connection = new SqlConnection(connetionString);
 
         //mysql
-        //public static string connetionString = @"server=db4free.net;userid=snehalchauhan;password=snehalchauhan;database=snehalhospital";
+       
         public static string connetionString = @"server=sql12.freemysqlhosting.net;userid=sql12327159;password=VFinC4LqZj;database=sql12327159";
         // public static string connetionString = @"server=localhost;userid=snehalchauhan;password=snehalchauhan;database=snehalhospital";
-        //"Server=db4free.net;Database=snehalhospital;Uid=snehalchauhan;Pwd=snehalchauhan;";
+     
         public static MySqlConnection connection = new MySqlConnection(connetionString);
 
         public static User getUser(string uid)
