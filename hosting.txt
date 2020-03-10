@@ -1,0 +1,19 @@
+https://dev.mysql.com/doc/connector-net/en/connector-net-tutorials-sql-command.html
+
+https://www.freemysqlhosting.net/login/?checkemail=registered
+Hi
+
+Your account number is: 396828
+
+Your new database is now ready to use.
+
+To connect to your database use these details
+
+Server: sql12.freemysqlhosting.net
+Name: sql12327159
+Username: sql12327159
+Password: VFinC4LqZj
+Port number: 3306
+db: sql12327159
+
+http://www.phpmyadmin.co/
