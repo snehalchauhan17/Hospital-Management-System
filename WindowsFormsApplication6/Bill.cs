@@ -8,6 +8,7 @@ namespace WindowsFormsApplication6
     {
     class Bill
         {
+        public int bid;
         public int pid;
         public string name;
         public int Roomno;

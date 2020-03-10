@@ -24,7 +24,7 @@ namespace WindowsFormsApplication6
 
             PatientInformation pi = DatabaseHelper.getPatient(Convert.ToInt32(textPID.Text));
             roomInformation r = DatabaseHelper.getRoom(Convert.ToInt32(textPID.Text));
-           
+          
             b.pid = pi.pid;
             b.name = pi.name;
             b.Roomno = r.Roomno;
@@ -70,9 +70,7 @@ namespace WindowsFormsApplication6
         {
             Bill bill = new Bill();
             bill.pid = Convert.ToInt32(textPID.Text);
-
-
-
+            bill.bid = Convert.ToInt32(txtbillid.Text);
 
             bill.RoomRent = Convert.ToInt32(txtroomrent.Text);
             bill.reportCharges = Convert.ToInt32(textRpt.Text);
