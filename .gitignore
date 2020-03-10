@@ -4,3 +4,4 @@ WindowsFormsApplication6/bin/
 WindowsFormsApplication6/obj/
 WindowsFormsApplication6/hmsdb_log.ldf
 *.exe
+.vs/
