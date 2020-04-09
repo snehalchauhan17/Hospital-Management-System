@@ -12,23 +12,24 @@ namespace WindowsFormsApplication6
     class DatabaseHelper
         {
         // vipul
-       // public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=F:\VipulDev\workspaces\net\Hospital-Management-System\WindowsFormsApplication6\hms.mdf;Integrated Security=True;Connect Timeout=30";
-     
+        // public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=F:\VipulDev\workspaces\net\Hospital-Management-System\WindowsFormsApplication6\hms.mdf;Integrated Security=True;Connect Timeout=30";
+
         // snehal      
         //  public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Vipul-Home\Documents\Visual Studio 2013\Projects\Hospital Management System\Hospital-Management-System\WindowsFormsApplication6\hms.mdf;Integrated Security=True;Connect Timeout=30";
-        
+
         // clg
-       // public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=F:\17012011066\Hospital-Management-System\WindowsFormsApplication6\hms.mdf;Integrated Security=True;Connect Timeout=30";
+        // public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=F:\17012011066\Hospital-Management-System\WindowsFormsApplication6\hms.mdf;Integrated Security=True;Connect Timeout=30";
 
         // sql laptop
         // public static string connetionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Vipul-Home\Documents\Visual Studio 2013\Projects\Hospital Management System\Hospital-Management-System\WindowsFormsApplication6\hms.mdf;Integrated Security=True;Connect Timeout=30";
         //public static SqlConnection connection = new SqlConnection(connetionString);
 
-        //mysql
-       
-       // public static string connetionString = @"server=sql12.freemysqlhosting.net;userid=sql12327159;password=VFinC4LqZj;database=sql12327159";
-        public static string connetionString = @"server=localhost;userid=sql12327159;password=VFinC4LqZj;database=sql12327159";
-      
+        //mysql-local        
+        //  public static string connetionString = @"server=localhost;userid=snehalchauhan;password=snehalchauhan;database=snehalhospital";
+
+        //mysql - aws
+        public static string connetionString = @"server=snehal-hms-instance.cyrl03dxdpkn.us-east-1.rds.amazonaws.com;userid=snehalchauhan;password=snehalchauhan;database=snehalhospital";
+
         public static MySqlConnection connection = new MySqlConnection(connetionString);
 
         public static User getUser(string uid)
@@ -38,7 +39,7 @@ namespace WindowsFormsApplication6
             //SqlCommand command;
             MySqlCommand command;
             MySqlDataReader dataReader;
-            string query = "select * from Login where userid=@userid";
+            string query = "select * from login where userid=@userid";
             connection.Open();
             command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@userid", uid);
@@ -62,7 +63,7 @@ namespace WindowsFormsApplication6
         public static DataTable getPatients()
             {
             connection.Open();
-            MySqlDataAdapter sqa = new MySqlDataAdapter("select * from patientInfo", connection);
+            MySqlDataAdapter sqa = new MySqlDataAdapter("select * from patientinfo", connection);
             DataTable dbt = new DataTable();
             sqa.Fill(dbt);
             connection.Close();
@@ -74,7 +75,7 @@ namespace WindowsFormsApplication6
             MySqlCommand command;
             MySqlDataReader dataReader;
 
-            string query = "select * from patientInfo where pid=@pid";
+            string query = "select * from patientinfo where pid=@pid";
             connection.Open();
             command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@pid", pid);
@@ -101,7 +102,7 @@ namespace WindowsFormsApplication6
         public static void addPatient(PatientInformation patient)
             {
             // insert patient to database patient info table.
-            string query = "insert into patientInfo values(@PID,@Date,@Name,@Gender,@Age,@Address,@Disease)";
+            string query = "insert into patientinfo values(@PID,@Date,@Name,@Gender,@Age,@Address,@Disease)";
             modifyPatient(patient, query);
             }
 
@@ -109,14 +110,14 @@ namespace WindowsFormsApplication6
 
         public static void updatePatient(PatientInformation patient)
             {
-            string query = "update PatientInfo set  date=@Date,name=@Name,gender=@Gender,age=@Age,address=@Address,disease=@Disease where pid=@PID";
+            string query = "update patientinfo set  date=@Date,name=@Name,gender=@Gender,age=@Age,address=@Address,disease=@Disease where pid=@PID";
             modifyPatient(patient, query);
 
             }
         public static void deletePatient(int pid)
             {
             connection.Open();
-            string query = "delete from PatientInfo where pid=@PID";
+            string query = "delete from patientinfo where pid=@PID";
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@PID", pid);
             command.ExecuteNonQuery();
@@ -166,10 +167,10 @@ namespace WindowsFormsApplication6
                 r.pid = pid;
                 r.Roomtype = (string)dataReader["roomtype"];
                 r.Status = (string)dataReader["status"];
-                r.Roomno = (int)dataReader["Roomno"];
-                r.Price = (int)dataReader["Price"];
-                r.Startdate = (string)dataReader["Startdate"];
-                r.Enddate = (string)dataReader["Enddate"];
+                r.Roomno = (int)dataReader["roomno"];
+                r.Price = (int)dataReader["price"];
+                r.Startdate = (string)dataReader["startdate"];
+                r.Enddate = (string)dataReader["enddate"];
                 }
             dataReader.Close();
             command.Dispose();
@@ -180,12 +181,12 @@ namespace WindowsFormsApplication6
         public static void addRoom(roomInformation room)
             {
             // insert patient to database patient info table.
-                string query2 = "insert into roombooking(PID,Roomtype,Roomno,Price,Startdate,Enddate,Status) values(@PID,@Roomtype,@Roomno,@Price,@Startdate,@Enddate,@Status)";
+                string query2 = "insert into roombooking(pid,roomtype,roomno,price,startdate,enddate,status) values(@PID,@Roomtype,@Roomno,@Price,@Startdate,@Enddate,@Status)";
             modifyRoom(room, query2);
             }
         public static void updateRoom(roomInformation room)
             {
-            string query2 = "update roombooking set Roomtype=@Roomtype,@Status=status,Startdate=@Startdate,Enddate=@Enddate,Roomno=@Roomno,Price=@Price where pid=@PID";
+            string query2 = "update roombooking set roomtype=@Roomtype,@status=status,startdate=@Startdate,enddate=@Enddate,roomno=@Roomno,price=@Price where pid=@PID";
             modifyRoom(room, query2);
 
             }
@@ -223,7 +224,7 @@ namespace WindowsFormsApplication6
         public static DataTable getBills()
             {
             connection.Open();
-            MySqlDataAdapter sqa = new MySqlDataAdapter("select * from BillPayment", connection);
+            MySqlDataAdapter sqa = new MySqlDataAdapter("select * from billpayment", connection);
             DataTable dbt = new DataTable();
             sqa.Fill(dbt);
             connection.Close();
@@ -234,7 +235,7 @@ namespace WindowsFormsApplication6
         public static void addBill(Bill bill)
             {
             // insert patient to database patient info table.
-                string query = "insert into BillPayment(BID,PID,RoomRent,medicineCharges,doctorCharges,reportCharges,otherCharges,total) values(@BID,@PID,@RoomRent,@medicineCharges,@doctorCharges,@reportCharges,@otherCharges,@total)";
+                string query = "insert into billpayment(bid,pid,roomrent,medicinecharges,doctorcharges,reportcharges,othercharges,total) values(@BID,@PID,@RoomRent,@medicineCharges,@doctorCharges,@reportCharges,@otherCharges,@total)";
             modifybill(bill, query);
             }
         private static void modifybill(Bill bill, string query)
