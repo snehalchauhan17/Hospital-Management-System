@@ -90,7 +90,7 @@ namespace WindowsFormsApplication6
         public static void addPatient(PatientInformation patient)
             {
             // insert patient to database patient info table.
-            string query = "insert into patientinfo values(@PID,@Date,@Name,@Gender,@Age,@Address,@Disease)";
+            string query = "insert into patientinfo(pid,date,name,gender,age,address,disease) values(@PID,@Date,@Name,@Gender,@Age,@Address,@Disease)";
             modifyPatient(patient, query);
             }
 
